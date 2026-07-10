@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { eventConfig } from "@/data/event";
 import { countdownLabels } from "@/data/ui";
+import { useIsMounted } from "@/hooks/useIsMounted";
 
 interface TimeLeft {
   days: number;
@@ -43,10 +44,10 @@ const units = [
 
 export function Countdown() {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(INITIAL_TIME);
-  const [isMounted, setIsMounted] = useState(false);
+  const isMounted = useIsMounted();
 
   useEffect(() => {
-    setIsMounted(true);
+    if (!isMounted) return;
 
     const update = () => {
       setTimeLeft(calculateTimeLeft(eventConfig.countdownTargetDate));
@@ -55,14 +56,14 @@ export function Countdown() {
     update();
     const timer = setInterval(update, 1000);
     return () => clearInterval(timer);
-  }, []);
+  }, [isMounted]);
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-3xl mx-auto">
       {units.map((unit, index) => (
         <motion.div
           key={unit.key}
-          initial={{ opacity: 0, y: 20 }}
+          initial={isMounted ? { opacity: 0, y: 20 } : false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.1 }}

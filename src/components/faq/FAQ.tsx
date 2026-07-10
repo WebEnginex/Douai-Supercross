@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import type { FAQItem } from "@/types";
 import { cn } from "@/lib/cn";
+import { useIsMounted } from "@/hooks/useIsMounted";
 
 interface FAQProps {
   items: FAQItem[];
@@ -12,6 +13,7 @@ interface FAQProps {
 
 export function FAQ({ items }: FAQProps) {
   const [openId, setOpenId] = useState<string | null>(items[0]?.id ?? null);
+  const isMounted = useIsMounted();
 
   return (
     <div className="max-w-3xl mx-auto space-y-3">
@@ -20,7 +22,7 @@ export function FAQ({ items }: FAQProps) {
         return (
           <motion.div
             key={item.id}
-            initial={{ opacity: 0, y: 10 }}
+            initial={isMounted ? { opacity: 0, y: 10 } : false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.05 }}

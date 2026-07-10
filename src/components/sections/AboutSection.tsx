@@ -14,6 +14,7 @@ import {
 import { eventConfig, eventInfoCards } from "@/data/event";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { SurfaceCard } from "@/components/ui/SurfaceCard";
+import { useIsMounted } from "@/hooks/useIsMounted";
 
 const iconMap = {
   calendar: Calendar,
@@ -28,6 +29,7 @@ const iconMap = {
 
 export function AboutSection() {
   const { about } = eventConfig;
+  const isMounted = useIsMounted();
 
   return (
     <section className="py-20 md:py-28 bg-background">
@@ -36,7 +38,7 @@ export function AboutSection() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={isMounted ? { opacity: 0, x: -30 } : false}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="space-y-6"
@@ -52,7 +54,7 @@ export function AboutSection() {
             {about.stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
+                initial={isMounted ? { opacity: 0, y: 20 } : false}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
@@ -75,6 +77,8 @@ export function AboutSection() {
 }
 
 export function EventInfoSection() {
+  const isMounted = useIsMounted();
+
   return (
     <section id="tickets" className="py-20 md:py-28 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,7 +93,7 @@ export function EventInfoSection() {
             return (
               <motion.div
                 key={card.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={isMounted ? { opacity: 0, y: 20 } : false}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}

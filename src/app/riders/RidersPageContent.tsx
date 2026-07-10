@@ -11,11 +11,13 @@ import {
 } from "@/data/riders";
 import { RiderCard } from "@/components/riders/RiderCard";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { useIsMounted } from "@/hooks/useIsMounted";
 
 export function RidersPageContent() {
   const [search, setSearch] = useState("");
   const [country, setCountry] = useState("all");
   const [manufacturer, setManufacturer] = useState("all");
+  const isMounted = useIsMounted();
 
   const countries = getUniqueCountries();
   const manufacturers = getUniqueManufacturers();
@@ -41,7 +43,7 @@ export function RidersPageContent() {
     "w-full bg-surface border border-white/10 rounded-sm px-4 py-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-brand-red/50 transition-colors";
 
   return (
-    <div className="pt-24 md:pt-28 pb-20">
+    <div className="pt-24 md:pt-28 pb-20 bg-background min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title={ridersPageLabels.title}
@@ -49,7 +51,7 @@ export function RidersPageContent() {
         />
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={isMounted ? { opacity: 0, y: 20 } : false}
           animate={{ opacity: 1, y: 0 }}
           className="mb-10 space-y-4"
         >

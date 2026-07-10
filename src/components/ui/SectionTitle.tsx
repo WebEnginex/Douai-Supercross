@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { cn } from "@/lib/cn";
+import { useIsMounted } from "@/hooks/useIsMounted";
 
 interface SectionTitleProps {
   title: string;
@@ -16,9 +17,11 @@ export function SectionTitle({
   align = "center",
   className,
 }: SectionTitleProps) {
+  const isMounted = useIsMounted();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={isMounted ? { opacity: 0, y: 20 } : false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5 }}

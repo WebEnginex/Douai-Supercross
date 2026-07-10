@@ -3,9 +3,11 @@
 import { motion } from "framer-motion";
 import { eventConfig } from "@/data/event";
 import { EventButton } from "@/components/ui/EventButton";
+import { useIsMounted } from "@/hooks/useIsMounted";
 
 export function CTASection() {
   const { cta } = eventConfig;
+  const isMounted = useIsMounted();
 
   return (
     <section className="py-24 md:py-32 relative overflow-hidden">
@@ -14,7 +16,7 @@ export function CTASection() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={isMounted ? { opacity: 0, y: 30 } : false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >

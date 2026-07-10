@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { User } from "lucide-react";
 import type { Rider } from "@/types";
 import { cn } from "@/lib/cn";
+import { useIsMounted } from "@/hooks/useIsMounted";
 
 interface RiderCardProps {
   rider: Rider;
@@ -18,9 +19,11 @@ export function RiderCard({
   showBio = false,
   className,
 }: RiderCardProps) {
+  const isMounted = useIsMounted();
+
   return (
     <motion.article
-      initial={{ opacity: 0, y: 30 }}
+      initial={isMounted ? { opacity: 0, y: 30 } : false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ delay: index * 0.08, duration: 0.4 }}

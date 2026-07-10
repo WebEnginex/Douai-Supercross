@@ -6,6 +6,7 @@ import { X, ZoomIn } from "lucide-react";
 import type { GalleryImage } from "@/types";
 import { galleryLabels } from "@/data/ui";
 import { cn } from "@/lib/cn";
+import { useIsMounted } from "@/hooks/useIsMounted";
 
 interface GalleryProps {
   images: GalleryImage[];
@@ -20,6 +21,7 @@ const aspectClasses: Record<GalleryImage["aspectRatio"], string> = {
 export function Gallery({ images }: GalleryProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selected = images.find((img) => img.id === selectedId);
+  const isMounted = useIsMounted();
 
   const close = useCallback(() => setSelectedId(null), []);
 
@@ -44,7 +46,7 @@ export function Gallery({ images }: GalleryProps) {
           <motion.button
             key={image.id}
             type="button"
-            initial={{ opacity: 0, y: 20 }}
+            initial={isMounted ? { opacity: 0, y: 20 } : false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.05 }}

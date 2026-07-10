@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useIsMounted } from "@/hooks/useIsMounted";
 
 interface PartnerLogoProps {
   name: string;
@@ -8,9 +9,11 @@ interface PartnerLogoProps {
 }
 
 export function PartnerLogo({ name, index }: PartnerLogoProps) {
+  const isMounted = useIsMounted();
+
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
+      initial={isMounted ? { opacity: 0, scale: 0.9 } : false}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05 }}

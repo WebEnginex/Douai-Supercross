@@ -7,6 +7,7 @@ import { faqItems } from "@/data/faq";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { FAQ } from "@/components/faq/FAQ";
 import { EventButton } from "@/components/ui/EventButton";
+import { useIsMounted } from "@/hooks/useIsMounted";
 
 export function FAQSection() {
   const { faq } = eventConfig.sections;
@@ -24,6 +25,7 @@ export function FAQSection() {
 export function NewsletterSection() {
   const [email, setEmail] = useState("");
   const { newsletter } = eventConfig.sections;
+  const isMounted = useIsMounted();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,7 +39,7 @@ export function NewsletterSection() {
         <SectionTitle title={newsletter.title} subtitle={newsletter.subtitle} />
         <p className="text-zinc-400 mb-8 -mt-8">{newsletter.description}</p>
         <motion.form
-          initial={{ opacity: 0, y: 20 }}
+          initial={isMounted ? { opacity: 0, y: 20 } : false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           onSubmit={handleSubmit}

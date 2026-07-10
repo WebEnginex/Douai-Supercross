@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { contactCategories, contactPageLabels } from "@/data/contact";
 import type { ContactFormData } from "@/types";
 import { EventButton } from "@/components/ui/EventButton";
+import { useIsMounted } from "@/hooks/useIsMounted";
 
 const initialForm: ContactFormData = {
   name: "",
@@ -18,6 +19,7 @@ export function ContactForm() {
   const [form, setForm] = useState<ContactFormData>(initialForm);
   const [submitted, setSubmitted] = useState(false);
   const { form: labels } = contactPageLabels;
+  const isMounted = useIsMounted();
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -41,7 +43,7 @@ export function ContactForm() {
 
   return (
     <motion.form
-      initial={{ opacity: 0, x: 20 }}
+      initial={isMounted ? { opacity: 0, x: 20 } : false}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
       onSubmit={handleSubmit}

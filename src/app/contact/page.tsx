@@ -14,7 +14,7 @@ export const metadata: Metadata = createMetadata({
 
 export default function ContactPage() {
   return (
-    <div className="pt-24 md:pt-28 pb-20">
+    <div className="pt-24 md:pt-28 pb-20 bg-background min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title={contactPageLabels.title}

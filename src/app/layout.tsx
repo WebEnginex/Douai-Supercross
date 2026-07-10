@@ -3,6 +3,7 @@ import { Bebas_Neue, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ServiceWorkerCleanup } from "@/components/ServiceWorkerCleanup";
 import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/data/site";
 
@@ -53,6 +54,7 @@ export default function RootLayout({
       <body
         className={`${bebasNeue.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`}
       >
+        <ServiceWorkerCleanup />
         <Navbar />
         <main>{children}</main>
         <Footer />

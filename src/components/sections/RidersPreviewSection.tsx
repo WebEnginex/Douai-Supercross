@@ -6,10 +6,12 @@ import { eventConfig } from "@/data/event";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { RiderCard } from "@/components/riders/RiderCard";
 import { EventButton } from "@/components/ui/EventButton";
+import { useIsMounted } from "@/hooks/useIsMounted";
 
 export function RidersPreviewSection() {
   const previewRiders = riders.slice(0, riderPreviewCount);
   const { ridersPreview } = eventConfig.sections;
+  const isMounted = useIsMounted();
 
   return (
     <section className="py-20 md:py-28 bg-background">
@@ -23,7 +25,7 @@ export function RidersPreviewSection() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={isMounted ? { opacity: 0 } : false}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="text-center mt-12"

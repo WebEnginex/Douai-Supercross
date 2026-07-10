@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { eventConfig } from "@/data/event";
 import { EventButton } from "@/components/ui/EventButton";
+import { useIsMounted } from "@/hooks/useIsMounted";
 
 export function Hero() {
   const { hero } = eventConfig;
+  const isMounted = useIsMounted();
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
@@ -28,7 +30,7 @@ export function Hero() {
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 text-center pt-20">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={isMounted ? { opacity: 0, y: 40 } : false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl"
@@ -54,7 +56,7 @@ export function Hero() {
       </div>
 
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={isMounted ? { opacity: 0 } : false}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"

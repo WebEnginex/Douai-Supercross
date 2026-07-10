@@ -7,7 +7,6 @@ import { getVisitsStats, getMessages, updateMessageStatus, deleteMessage, type M
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Header } from '@/components/header';
 import { 
   LayoutDashboard, 
   MessageSquare, 
@@ -157,13 +156,9 @@ export default function AdminDashboard() {
   }
 
   return (
-  <div className="min-h-screen bg-black text-white">
-      {/* Header réutilisable */}
-      <Header showCountdown={false} />
-      
+  <div className="min-h-screen bg-black text-white pt-24 md:pt-28">
   <div>
-        {/* Header spécifique au dashboard */}
-        <div className="fixed top-[80px] sm:top-[96px] lg:top-[240px] left-0 right-0 z-40 bg-gray-900/50 border-b border-gray-800/50 shadow-sm backdrop-blur-sm">
+        <div className="fixed top-16 md:top-20 left-0 right-0 z-40 bg-gray-900/50 border-b border-gray-800/50 shadow-sm backdrop-blur-sm">
           <div className="container mx-auto px-4 py-4 lg:py-6">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
               <div className="flex items-center gap-3">
