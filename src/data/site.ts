@@ -4,6 +4,7 @@ export const siteConfig = {
   tagline: "L'expérience Super Enduro indoor ultime",
   description:
     "Vivez l'action Super Enduro de classe mondiale au GP Super Enduro Paris — un événement motorsport international premium réunissant les meilleurs pilotes et une atmosphère inoubliable.",
+  /** URL de production — sur Vercel, getSiteUrl() utilise VERCEL_URL automatiquement. */
   url: "https://www.gpsuperenduroparis.com",
   locale: "fr",
   themeColor: "#E30613",

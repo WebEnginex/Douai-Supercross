@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/data/site";
+import { getSiteUrl } from "@/lib/site-url";
 
 interface PageSEO {
   title: string;
@@ -14,14 +15,15 @@ export function createMetadata({
   path = "",
   noIndex = false,
 }: PageSEO): Metadata {
-  const url = `${siteConfig.url}${path}`;
+  const siteUrl = getSiteUrl();
+  const url = `${siteUrl}${path}`;
   const fullTitle =
     title === siteConfig.name ? title : `${title} | ${siteConfig.name}`;
 
   return {
     title: fullTitle,
     description,
-    metadataBase: new URL(siteConfig.url),
+    metadataBase: new URL(siteUrl),
     alternates: {
       canonical: url,
     },
