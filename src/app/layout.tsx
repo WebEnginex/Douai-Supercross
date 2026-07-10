@@ -1,38 +1,46 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Bebas_Neue, Racing_Sans_One } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Bebas_Neue, Inter } from "next/font/google";
 import "./globals.css";
-import { ConditionalHeader } from "@/components/conditional-header";
-import { Footer } from "@/components/footer";
-import { CacheInitializer } from "@/components/CacheInitializer";
-import { AutoCacheProvider } from "@/components/AutoCacheProvider";
-import { BackgroundPreloader } from "@/components/BackgroundPreloader";
-import { SkipToContent } from "@/components/SkipToContent";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { createMetadata } from "@/lib/seo";
+import { siteConfig } from "@/data/site";
 
 const bebasNeue = Bebas_Neue({
-  variable: "--font-bebas-neue",
   subsets: ["latin"],
   weight: "400",
+  variable: "--font-display",
+  display: "swap",
 });
 
-const racingSansOne = Racing_Sans_One({
-  variable: "--font-racing-sans-one",
+const inter = Inter({
   subsets: ["latin"],
-  weight: "400",
+  variable: "--font-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Gp SuperEnduro",
-  description: "L'événement incontournable de SuperEnduro.",
+  ...createMetadata({
+    title: siteConfig.name,
+    description: siteConfig.description,
+    path: "/",
+  }),
+  keywords: [
+    "Super Enduro",
+    "motorsport",
+    "Paris",
+    "indoor racing",
+    "GP Super Enduro",
+  ],
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  manifest: "/manifest.json",
+};
+
+export const viewport: Viewport = {
+  themeColor: siteConfig.themeColor,
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -41,17 +49,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${racingSansOne.variable} antialiased overflow-x-hidden`}
-        suppressHydrationWarning
-        style={{ margin: 0, padding: 0, width: '100%', minHeight: '100vh' }}
+        className={`${bebasNeue.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`}
       >
-        <SkipToContent />
-        <CacheInitializer />
-        <BackgroundPreloader />
-        <AutoCacheProvider />
-        <ConditionalHeader />
+        <Navbar />
         <main>{children}</main>
         <Footer />
       </body>
