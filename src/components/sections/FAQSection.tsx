@@ -2,16 +2,19 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { eventConfig } from "@/data/event";
 import { faqItems } from "@/data/faq";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { FAQ } from "@/components/faq/FAQ";
 import { EventButton } from "@/components/ui/EventButton";
 
 export function FAQSection() {
+  const { faq } = eventConfig.sections;
+
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle title="FAQ" subtitle="Good to Know" />
+        <SectionTitle title={faq.title} subtitle={faq.subtitle} />
         <FAQ items={faqItems} />
       </div>
     </section>
@@ -20,6 +23,7 @@ export function FAQSection() {
 
 export function NewsletterSection() {
   const [email, setEmail] = useState("");
+  const { newsletter } = eventConfig.sections;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,14 +34,8 @@ export function NewsletterSection() {
   return (
     <section className="py-20 md:py-28 bg-surface">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <SectionTitle
-          title="Stay in the Loop"
-          subtitle="Newsletter"
-        />
-        <p className="text-zinc-400 mb-8 -mt-8">
-          Placeholder — Subscribe to receive event updates, rider announcements,
-          and exclusive offers.
-        </p>
+        <SectionTitle title={newsletter.title} subtitle={newsletter.subtitle} />
+        <p className="text-zinc-400 mb-8 -mt-8">{newsletter.description}</p>
         <motion.form
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,12 +47,12 @@ export function NewsletterSection() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email Address"
+            placeholder={newsletter.placeholder}
             className="flex-1 bg-background border border-white/10 rounded-sm px-4 py-3 text-white placeholder:text-zinc-500 focus:outline-none focus:border-brand-red/50"
             required
           />
           <EventButton type="submit" size="md">
-            Subscribe
+            {newsletter.button}
           </EventButton>
         </motion.form>
       </div>

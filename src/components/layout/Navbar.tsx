@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
+import { navbarLabels } from "@/data/ui";
 import { useNavbarScroll } from "@/hooks/useNavbarScroll";
 import { cn } from "@/lib/cn";
 
@@ -24,7 +25,7 @@ export function Navbar() {
     >
       <nav
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-        aria-label="Main navigation"
+        aria-label={navbarLabels.mainNavigation}
       >
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link
@@ -52,7 +53,7 @@ export function Navbar() {
             type="button"
             className="md:hidden p-2 text-white"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-label={isOpen ? navbarLabels.closeMenu : navbarLabels.openMenu}
             aria-expanded={isOpen}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}

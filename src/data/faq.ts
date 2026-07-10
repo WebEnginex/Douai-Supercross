@@ -3,38 +3,38 @@ import type { FAQItem } from "@/types";
 export const faqItems: FAQItem[] = [
   {
     id: "faq-01",
-    question: "Placeholder Question — When does the event take place?",
+    question: "Question — emplacement réservé : Quand a lieu l'événement ?",
     answer:
-      "Placeholder answer — Replace with the official event date and schedule information. All FAQ content can be updated in this data file.",
+      "Réponse — emplacement réservé. Remplacez par la date officielle de l'événement et les informations sur le programme. Tout le contenu de la FAQ peut être mis à jour dans ce fichier de données.",
   },
   {
     id: "faq-02",
-    question: "Placeholder Question — Where is the venue located?",
+    question: "Question — emplacement réservé : Où se situe le lieu ?",
     answer:
-      "Placeholder answer — Replace with venue name, address, and directions for attendees.",
+      "Réponse — emplacement réservé. Remplacez par le nom du lieu, l'adresse et les indications pour les participants.",
   },
   {
     id: "faq-03",
-    question: "Placeholder Question — How can I purchase tickets?",
+    question: "Question — emplacement réservé : Comment acheter des billets ?",
     answer:
-      "Placeholder answer — Replace with ticketing information, pricing tiers, and purchase links.",
+      "Réponse — emplacement réservé. Remplacez par les informations de billetterie, les tarifs et les liens d'achat.",
   },
   {
     id: "faq-04",
-    question: "Placeholder Question — What is included in VIP access?",
+    question: "Question — emplacement réservé : Que comprend l'accès VIP ?",
     answer:
-      "Placeholder answer — Replace with VIP package details, amenities, and booking information.",
+      "Réponse — emplacement réservé. Remplacez par les détails des formules VIP, les prestations et les informations de réservation.",
   },
   {
     id: "faq-05",
-    question: "Placeholder Question — Is parking available on site?",
+    question: "Question — emplacement réservé : Y a-t-il un parking sur place ?",
     answer:
-      "Placeholder answer — Replace with parking availability, pricing, and alternative transport options.",
+      "Réponse — emplacement réservé. Remplacez par la disponibilité du parking, les tarifs et les alternatives de transport.",
   },
   {
     id: "faq-06",
-    question: "Placeholder Question — Can I bring children to the event?",
+    question: "Question — emplacement réservé : Puis-je venir avec des enfants ?",
     answer:
-      "Placeholder answer — Replace with age policies, family areas, and child ticket information.",
+      "Réponse — emplacement réservé. Remplacez par la politique d'âge, les espaces famille et les informations sur les billets enfants.",
   },
 ];

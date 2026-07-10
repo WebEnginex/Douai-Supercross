@@ -34,7 +34,7 @@ export function Hero() {
           className="max-w-4xl"
         >
           <p className="text-brand-red text-sm md:text-base font-semibold tracking-[0.3em] uppercase mb-4">
-            International Super Enduro
+            {hero.subtitle}
           </p>
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-none mb-6">
             {hero.title}
@@ -61,7 +61,7 @@ export function Hero() {
       >
         <div className="flex flex-col items-center gap-2">
           <span className="text-zinc-400 text-xs uppercase tracking-widest">
-            Scroll
+            {hero.scrollLabel}
           </span>
           <motion.div
             animate={{ y: [0, 8, 0] }}

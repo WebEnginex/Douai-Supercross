@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { eventConfig } from "@/data/event";
+import { countdownLabels } from "@/data/ui";
 
 interface TimeLeft {
   days: number;
@@ -27,10 +28,10 @@ function calculateTimeLeft(targetDate: string): TimeLeft {
 }
 
 const units = [
-  { key: "days" as const, label: "Days" },
-  { key: "hours" as const, label: "Hours" },
-  { key: "minutes" as const, label: "Minutes" },
-  { key: "seconds" as const, label: "Seconds" },
+  { key: "days" as const, label: countdownLabels.days },
+  { key: "hours" as const, label: countdownLabels.hours },
+  { key: "minutes" as const, label: countdownLabels.minutes },
+  { key: "seconds" as const, label: countdownLabels.seconds },
 ];
 
 export function Countdown() {

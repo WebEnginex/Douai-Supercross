@@ -1,11 +1,13 @@
 export const siteConfig = {
   name: "GP Super Enduro Paris",
   shortName: "GP Super Enduro",
-  tagline: "The Ultimate Indoor Super Enduro Experience",
+  tagline: "L'expérience Super Enduro indoor ultime",
   description:
-    "Experience world-class Super Enduro action at GP Super Enduro Paris — a premier international motorsport event bringing elite riders and unforgettable atmosphere.",
+    "Vivez l'action Super Enduro de classe mondiale au GP Super Enduro Paris — un événement motorsport international premium réunissant les meilleurs pilotes et une atmosphère inoubliable.",
   url: "https://www.gpsuperenduroparis.com",
-  locale: "en",
+  locale: "fr",
   themeColor: "#E30613",
   ogImage: "/images/og-placeholder.svg",
+  footerDescription:
+    "Description du pied de page — emplacement réservé. Remplacez par un résumé de l'événement et les informations clés.",
 } as const;

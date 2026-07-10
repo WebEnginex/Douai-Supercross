@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "Super Enduro",
     "motorsport",
     "Paris",
-    "indoor racing",
+    "course indoor",
     "GP Super Enduro",
   ],
   authors: [{ name: siteConfig.name }],
@@ -49,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="fr" className="dark">
       <body
         className={`${bebasNeue.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`}
       >

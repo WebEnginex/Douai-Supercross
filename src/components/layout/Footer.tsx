@@ -9,6 +9,7 @@ import {
   socialLinks,
 } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
+import { footerLabels } from "@/data/ui";
 import { EventButton } from "@/components/ui/EventButton";
 
 const socialIcons: Record<string, React.ReactNode> = {
@@ -36,14 +37,13 @@ export function Footer() {
               {siteConfig.shortName}
             </h3>
             <p className="text-zinc-400 text-sm leading-relaxed">
-              Placeholder footer description — Replace with event summary and
-              key information.
+              {siteConfig.footerDescription}
             </p>
           </div>
 
           <div>
             <h4 className="text-white font-semibold uppercase tracking-widest text-sm mb-4">
-              Navigation
+              {footerLabels.navigation}
             </h4>
             <ul className="space-y-2">
               {footerNavLinks.map((link) => (
@@ -61,29 +61,29 @@ export function Footer() {
 
           <div>
             <h4 className="text-white font-semibold uppercase tracking-widest text-sm mb-4">
-              Newsletter
+              {footerLabels.newsletter}
             </h4>
             <p className="text-zinc-400 text-sm mb-4">
-              Placeholder — Subscribe for event updates.
+              {footerLabels.newsletterDescription}
             </p>
             <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email Address"
+                placeholder={footerLabels.emailPlaceholder}
                 className="flex-1 bg-surface border border-white/10 rounded-sm px-3 py-2 text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-brand-red/50"
                 required
               />
               <EventButton type="submit" size="sm" variant="primary">
-                Join
+                {footerLabels.joinButton}
               </EventButton>
             </form>
           </div>
 
           <div>
             <h4 className="text-white font-semibold uppercase tracking-widest text-sm mb-4">
-              Follow Us
+              {footerLabels.followUs}
             </h4>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -102,7 +102,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-zinc-500 text-sm">
-            © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+            © {new Date().getFullYear()} {siteConfig.name}. {footerLabels.rightsReserved}
           </p>
           <ul className="flex flex-wrap gap-6">
             {legalLinks.map((link) => (

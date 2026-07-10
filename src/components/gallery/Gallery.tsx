@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
 import type { GalleryImage } from "@/types";
+import { galleryLabels } from "@/data/ui";
 import { cn } from "@/lib/cn";
 
 interface GalleryProps {
@@ -52,7 +53,7 @@ export function Gallery({ images }: GalleryProps) {
               "relative w-full break-inside-avoid rounded-lg overflow-hidden group cursor-pointer border border-white/5",
               aspectClasses[image.aspectRatio]
             )}
-            aria-label={`View ${image.alt}`}
+            aria-label={`${galleryLabels.viewImage} ${image.alt}`}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 via-zinc-900 to-black" />
             <div className="absolute inset-0 flex items-center justify-center">
@@ -83,7 +84,7 @@ export function Gallery({ images }: GalleryProps) {
               type="button"
               onClick={close}
               className="absolute top-4 right-4 p-2 text-white/80 hover:text-white z-10"
-              aria-label="Close lightbox"
+              aria-label={galleryLabels.closeLightbox}
             >
               <X size={28} />
             </button>

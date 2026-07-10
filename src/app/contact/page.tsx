@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { Mail, Phone, MapPin, User } from "lucide-react";
 import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/data/site";
-import { organizerInfo } from "@/data/contact";
+import { organizerInfo, contactPageLabels } from "@/data/contact";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = createMetadata({
   title: "Contact",
-  description: `Get in touch with the ${siteConfig.name} organizers. Tickets, VIP, press, partnerships, and more.`,
+  description: `Contactez les organisateurs de ${siteConfig.name}. Billets, VIP, presse, partenariats et plus encore.`,
   path: "/contact",
 });
 
@@ -16,7 +16,10 @@ export default function ContactPage() {
   return (
     <div className="pt-24 md:pt-28 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle title="Contact" subtitle="Get in Touch" />
+        <SectionTitle
+          title={contactPageLabels.title}
+          subtitle={contactPageLabels.subtitle}
+        />
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           <div className="space-y-8">
@@ -25,7 +28,9 @@ export default function ContactPage() {
                 <User size={20} className="text-brand-red" />
               </div>
               <div>
-                <h3 className="text-white font-semibold mb-1">Organizer</h3>
+                <h3 className="text-white font-semibold mb-1">
+                  {contactPageLabels.organizer}
+                </h3>
                 <p className="text-zinc-400">{organizerInfo.name}</p>
               </div>
             </div>
@@ -35,7 +40,9 @@ export default function ContactPage() {
                 <Mail size={20} className="text-brand-red" />
               </div>
               <div>
-                <h3 className="text-white font-semibold mb-1">Email</h3>
+                <h3 className="text-white font-semibold mb-1">
+                  {contactPageLabels.email}
+                </h3>
                 <p className="text-zinc-400">{organizerInfo.email}</p>
               </div>
             </div>
@@ -45,7 +52,9 @@ export default function ContactPage() {
                 <Phone size={20} className="text-brand-red" />
               </div>
               <div>
-                <h3 className="text-white font-semibold mb-1">Phone</h3>
+                <h3 className="text-white font-semibold mb-1">
+                  {contactPageLabels.phone}
+                </h3>
                 <p className="text-zinc-400">{organizerInfo.phone}</p>
               </div>
             </div>
@@ -55,7 +64,9 @@ export default function ContactPage() {
                 <MapPin size={20} className="text-brand-red" />
               </div>
               <div>
-                <h3 className="text-white font-semibold mb-1">Venue</h3>
+                <h3 className="text-white font-semibold mb-1">
+                  {contactPageLabels.venue}
+                </h3>
                 <p className="text-zinc-400">{organizerInfo.address}</p>
               </div>
             </div>
@@ -69,7 +80,7 @@ export default function ContactPage() {
 
           <div className="bg-surface border border-white/5 rounded-lg p-6 md:p-8">
             <h3 className="text-white font-display text-xl font-bold mb-6">
-              Send a Message
+              {contactPageLabels.sendMessage}
             </h3>
             <ContactForm />
           </div>

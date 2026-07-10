@@ -7,6 +7,7 @@ import {
   riders,
   getUniqueCountries,
   getUniqueManufacturers,
+  ridersPageLabels,
 } from "@/data/riders";
 import { RiderCard } from "@/components/riders/RiderCard";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -42,7 +43,10 @@ export function RidersPageContent() {
   return (
     <div className="pt-24 md:pt-28 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle title="Riders" subtitle="Full Lineup" />
+        <SectionTitle
+          title={ridersPageLabels.title}
+          subtitle={ridersPageLabels.subtitle}
+        />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -58,9 +62,9 @@ export function RidersPageContent() {
               type="search"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search riders..."
+              placeholder={ridersPageLabels.searchPlaceholder}
               className={`${inputClasses} pl-11`}
-              aria-label="Search riders"
+              aria-label={ridersPageLabels.searchPlaceholder}
             />
           </div>
 
@@ -74,9 +78,9 @@ export function RidersPageContent() {
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}
                 className={`${inputClasses} pl-11 appearance-none cursor-pointer`}
-                aria-label="Filter by country"
+                aria-label={ridersPageLabels.allCountries}
               >
-                <option value="all">All Countries</option>
+                <option value="all">{ridersPageLabels.allCountries}</option>
                 {countries.map((c) => (
                   <option key={c} value={c}>
                     {c}
@@ -94,9 +98,9 @@ export function RidersPageContent() {
                 value={manufacturer}
                 onChange={(e) => setManufacturer(e.target.value)}
                 className={`${inputClasses} pl-11 appearance-none cursor-pointer`}
-                aria-label="Filter by manufacturer"
+                aria-label={ridersPageLabels.allManufacturers}
               >
-                <option value="all">All Manufacturers</option>
+                <option value="all">{ridersPageLabels.allManufacturers}</option>
                 {manufacturers.map((m) => (
                   <option key={m} value={m}>
                     {m}
@@ -109,7 +113,7 @@ export function RidersPageContent() {
 
         {filteredRiders.length === 0 ? (
           <p className="text-center text-zinc-500 py-16">
-            No riders match your filters. Try adjusting your search.
+            {ridersPageLabels.emptyState}
           </p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

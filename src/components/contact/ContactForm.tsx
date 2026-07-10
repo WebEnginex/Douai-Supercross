@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { contactCategories } from "@/data/contact";
+import { contactCategories, contactPageLabels } from "@/data/contact";
 import type { ContactFormData } from "@/types";
 import { EventButton } from "@/components/ui/EventButton";
 
@@ -17,6 +17,7 @@ const initialForm: ContactFormData = {
 export function ContactForm() {
   const [form, setForm] = useState<ContactFormData>(initialForm);
   const [submitted, setSubmitted] = useState(false);
+  const { form: labels } = contactPageLabels;
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -49,7 +50,7 @@ export function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="name" className="block text-sm text-zinc-400 mb-2">
-            Name
+            {labels.name}
           </label>
           <input
             id="name"
@@ -57,14 +58,14 @@ export function ContactForm() {
             type="text"
             value={form.name}
             onChange={handleChange}
-            placeholder="Your Name"
+            placeholder={labels.namePlaceholder}
             className={inputClasses}
             required
           />
         </div>
         <div>
           <label htmlFor="email" className="block text-sm text-zinc-400 mb-2">
-            Email
+            {labels.email}
           </label>
           <input
             id="email"
@@ -72,7 +73,7 @@ export function ContactForm() {
             type="email"
             value={form.email}
             onChange={handleChange}
-            placeholder="Your Email"
+            placeholder={labels.emailPlaceholder}
             className={inputClasses}
             required
           />
@@ -81,7 +82,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="subject" className="block text-sm text-zinc-400 mb-2">
-          Subject
+          {labels.subject}
         </label>
         <input
           id="subject"
@@ -89,7 +90,7 @@ export function ContactForm() {
           type="text"
           value={form.subject}
           onChange={handleChange}
-          placeholder="Subject"
+          placeholder={labels.subjectPlaceholder}
           className={inputClasses}
           required
         />
@@ -97,7 +98,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="category" className="block text-sm text-zinc-400 mb-2">
-          Category
+          {labels.category}
         </label>
         <select
           id="category"
@@ -116,14 +117,14 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="message" className="block text-sm text-zinc-400 mb-2">
-          Message
+          {labels.message}
         </label>
         <textarea
           id="message"
           name="message"
           value={form.message}
           onChange={handleChange}
-          placeholder="Your Message"
+          placeholder={labels.messagePlaceholder}
           rows={5}
           className={`${inputClasses} resize-none`}
           required
@@ -131,7 +132,7 @@ export function ContactForm() {
       </div>
 
       <EventButton type="submit" size="lg" className="w-full sm:w-auto">
-        Send Message
+        {labels.submit}
       </EventButton>
 
       {submitted && (
@@ -140,8 +141,7 @@ export function ContactForm() {
           animate={{ opacity: 1, y: 0 }}
           className="text-green-400 text-sm"
         >
-          Placeholder — Message logged to console. Connect to your email service
-          when ready.
+          {labels.success}
         </motion.p>
       )}
     </motion.form>

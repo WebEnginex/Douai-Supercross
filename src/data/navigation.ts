@@ -1,21 +1,21 @@
 import type { FooterLink, NavLink, SocialLink } from "@/types";
 
 export const navLinks: NavLink[] = [
-  { label: "Home", href: "/" },
-  { label: "Riders", href: "/riders" },
+  { label: "Accueil", href: "/" },
+  { label: "Pilotes", href: "/riders" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const footerNavLinks: FooterLink[] = [
-  { label: "Home", href: "/" },
-  { label: "Riders", href: "/riders" },
+  { label: "Accueil", href: "/" },
+  { label: "Pilotes", href: "/riders" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const legalLinks: FooterLink[] = [
-  { label: "Privacy Policy", href: "#privacy" },
-  { label: "Terms of Use", href: "#terms" },
-  { label: "Cookie Policy", href: "#cookies" },
+  { label: "Politique de confidentialité", href: "#privacy" },
+  { label: "Conditions d'utilisation", href: "#terms" },
+  { label: "Politique des cookies", href: "#cookies" },
 ];
 
 export const socialLinks: SocialLink[] = [
