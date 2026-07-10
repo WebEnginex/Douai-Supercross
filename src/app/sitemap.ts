@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/riders`,
+      url: `${baseUrl}/pilotes`,
       lastModified,
       changeFrequency: "weekly",
       priority: 0.8,

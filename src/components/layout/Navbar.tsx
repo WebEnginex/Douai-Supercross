@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/data/navigation";
@@ -11,14 +12,17 @@ import { useNavbarScroll } from "@/hooks/useNavbarScroll";
 import { cn } from "@/lib/cn";
 
 export function Navbar() {
+  const pathname = usePathname();
   const isScrolled = useNavbarScroll();
   const [isOpen, setIsOpen] = useState(false);
+  const isHomePage = pathname === "/";
+  const showSolidBackground = !isHomePage || isScrolled;
 
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        isScrolled
+        showSolidBackground
           ? "bg-black/80 backdrop-blur-xl border-b border-white/5 shadow-2xl"
           : "bg-transparent"
       )}

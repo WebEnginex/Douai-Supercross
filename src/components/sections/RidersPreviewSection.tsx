@@ -28,7 +28,7 @@ export function RidersPreviewSection() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <EventButton href="/riders" variant="outline" size="lg">
+          <EventButton href="/pilotes" variant="outline" size="lg">
             {ridersPreview.viewAll}
           </EventButton>
         </motion.div>

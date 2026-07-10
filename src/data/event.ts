@@ -15,7 +15,7 @@ export const eventConfig = {
     },
     secondaryButton: {
       label: "Voir les pilotes",
-      href: "/riders",
+      href: "/pilotes",
     },
     videoSrc: "/video/SuperEnduroPoland2023.webm",
     posterSrc: "/images/hero-poster.svg",
