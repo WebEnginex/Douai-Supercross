@@ -101,7 +101,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-zinc-500 text-sm">
+          <p className="text-zinc-500 text-sm" suppressHydrationWarning>
             © {new Date().getFullYear()} {siteConfig.name}. {footerLabels.rightsReserved}
           </p>
           <ul className="flex flex-wrap gap-6">

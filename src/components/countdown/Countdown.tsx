@@ -12,6 +12,13 @@ interface TimeLeft {
   seconds: number;
 }
 
+const INITIAL_TIME: TimeLeft = {
+  days: 0,
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+};
+
 function calculateTimeLeft(targetDate: string): TimeLeft {
   const difference = new Date(targetDate).getTime() - Date.now();
 
@@ -35,14 +42,18 @@ const units = [
 ];
 
 export function Countdown() {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(() =>
-    calculateTimeLeft(eventConfig.countdownTargetDate)
-  );
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(INITIAL_TIME);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    setIsMounted(true);
+
+    const update = () => {
       setTimeLeft(calculateTimeLeft(eventConfig.countdownTargetDate));
-    }, 1000);
+    };
+
+    update();
+    const timer = setInterval(update, 1000);
     return () => clearInterval(timer);
   }, []);
 
@@ -58,8 +69,13 @@ export function Countdown() {
           className="relative bg-surface border border-white/10 rounded-lg p-4 md:p-6 text-center overflow-hidden group"
         >
           <div className="absolute inset-0 bg-gradient-to-b from-brand-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-          <span className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums">
-            {String(timeLeft[unit.key]).padStart(2, "0")}
+          <span
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white tabular-nums"
+            suppressHydrationWarning
+          >
+            {isMounted
+              ? String(timeLeft[unit.key]).padStart(2, "0")
+              : "--"}
           </span>
           <p className="text-zinc-400 text-xs md:text-sm uppercase tracking-widest mt-2">
             {unit.label}
