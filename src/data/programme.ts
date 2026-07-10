@@ -6,6 +6,7 @@ export const programmePageLabels = {
   disclaimer:
     "Programme provisoire — emplacement réservé. Les horaires et activités seront confirmés et mis à jour dans ce fichier de données.",
   emptyState: "Aucun élément ne correspond à ce filtre.",
+  billetterieCta: "Réserver vos places",
 } as const;
 
 export const scheduleCategories: ScheduleCategory[] = [

@@ -11,7 +11,7 @@ export const eventConfig = {
       "Description — emplacement réservé. Remplacez par le slogan de votre événement. Les meilleurs pilotes Super Enduro du monde se retrouvent pour une soirée de course indoor électrisante.",
     primaryButton: {
       label: "Acheter des billets",
-      href: "#tickets",
+      href: "/billeterie",
     },
     secondaryButton: {
       label: "Voir les pilotes",
@@ -41,7 +41,7 @@ export const eventConfig = {
       "Texte — emplacement réservé. Réservez votre place pour l'événement Super Enduro le plus attendu de la saison. Billets, expériences VIP et accès exclusifs vous attendent.",
     primaryButton: {
       label: "Acheter des billets",
-      href: "#tickets",
+      href: "/billeterie",
     },
     secondaryButton: {
       label: "Nous contacter",
@@ -125,8 +125,9 @@ export const eventInfoCards: EventInfoCard[] = [
   {
     id: "vip",
     title: "Espace VIP",
-    value: "Espace VIP",
-    description: "Emplacement réservé — Remplacez par les informations sur les formules VIP.",
+    value: "Pass VIP disponible",
+    description:
+      "Emplacement réservé — Découvrez le Pass VIP et les formules premium sur la page Billetterie.",
     icon: "star",
   },
   {

@@ -9,6 +9,7 @@ import {
   scheduleItems,
 } from "@/data/programme";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { EventButton } from "@/components/ui/EventButton";
 import { ScheduleTimeline } from "@/components/programme/ScheduleTimeline";
 import { useIsMounted } from "@/hooks/useIsMounted";
 import { cn } from "@/lib/cn";
@@ -68,6 +69,12 @@ export function ProgrammePageContent() {
         ) : (
           <ScheduleTimeline items={filteredItems} />
         )}
+
+        <div className="text-center mt-16">
+          <EventButton href="/billeterie" size="lg">
+            {programmePageLabels.billetterieCta}
+          </EventButton>
+        </div>
       </div>
     </div>
   );

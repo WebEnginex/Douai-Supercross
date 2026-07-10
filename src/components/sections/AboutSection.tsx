@@ -80,7 +80,7 @@ export function EventInfoSection() {
   const isMounted = useIsMounted();
 
   return (
-    <section id="tickets" className="py-20 md:py-28 bg-surface">
+    <section id="informations" className="py-20 md:py-28 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title={eventConfig.sections.eventInfo.title}

@@ -15,15 +15,15 @@ export const faqItems: FAQItem[] = [
   },
   {
     id: "faq-03",
-    question: "Question — emplacement réservé : Comment acheter des billets ?",
+    question: "Comment acheter des billets ?",
     answer:
-      "Réponse — emplacement réservé. Remplacez par les informations de billetterie, les tarifs et les liens d'achat.",
+      "Rendez-vous sur la page Billetterie pour consulter les formules disponibles (Tribune Standard, Premium, Pass VIP et Paddock Expérience). Chaque offre vous redirige vers la plateforme partenaire officielle pour finaliser votre achat en toute sécurité.",
   },
   {
     id: "faq-04",
-    question: "Question — emplacement réservé : Que comprend l'accès VIP ?",
+    question: "Que comprend l'accès VIP ?",
     answer:
-      "Réponse — emplacement réservé. Remplacez par les détails des formules VIP, les prestations et les informations de réservation.",
+      "Le Pass VIP inclut un accès à l'espace VIP, la restauration et une rencontre avec les pilotes — détails et tarifs sur la page Billetterie. Remplacez ces informations par le contenu définitif du client.",
   },
   {
     id: "faq-05",

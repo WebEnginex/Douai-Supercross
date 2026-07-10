@@ -36,6 +36,7 @@ export interface GalleryImage {
 export interface NavLink {
   label: string;
   href: string;
+  highlight?: boolean;
 }
 
 export interface ContactCategory {
@@ -74,4 +75,16 @@ export interface ScheduleItem {
 export interface ScheduleCategory {
   id: string;
   label: string;
+}
+
+export interface Ticket {
+  id: string;
+  name: string;
+  price: string;
+  description: string;
+  features: string[];
+  purchaseUrl: string;
+  tier: "standard" | "premium" | "vip" | "paddock";
+  featured?: boolean;
+  badge?: string;
 }

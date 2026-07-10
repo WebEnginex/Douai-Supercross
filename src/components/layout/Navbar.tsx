@@ -39,15 +39,22 @@ export function Navbar() {
             {siteConfig.shortName}
           </Link>
 
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm font-medium text-white/80 hover:text-white uppercase tracking-widest transition-colors relative group"
+                  className={cn(
+                    "text-sm font-medium uppercase tracking-widest transition-colors relative group",
+                    link.highlight
+                      ? "px-4 py-2 bg-brand-red text-white font-semibold rounded-sm hover:bg-brand-red-dark shadow-lg shadow-brand-red/20"
+                      : "text-white/80 hover:text-white"
+                  )}
                 >
                   {link.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red transition-all duration-300 group-hover:w-full" />
+                  {!link.highlight && (
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red transition-all duration-300 group-hover:w-full" />
+                  )}
                 </Link>
               </li>
             ))}
@@ -79,7 +86,12 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block py-3 px-4 text-white/90 hover:text-white hover:bg-white/5 rounded-sm uppercase tracking-widest text-sm font-medium transition-colors"
+                    className={cn(
+                      "block py-3 px-4 rounded-sm uppercase tracking-widest text-sm font-medium transition-colors",
+                      link.highlight
+                        ? "bg-brand-red text-white font-semibold text-center"
+                        : "text-white/90 hover:text-white hover:bg-white/5"
+                    )}
                   >
                     {link.label}
                   </Link>

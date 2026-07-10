@@ -4,6 +4,7 @@ export const navLinks: NavLink[] = [
   { label: "Accueil", href: "/" },
   { label: "Programme", href: "/programme" },
   { label: "Pilotes", href: "/pilotes" },
+  { label: "Billetterie", href: "/billeterie", highlight: true },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -11,6 +12,7 @@ export const footerNavLinks: FooterLink[] = [
   { label: "Accueil", href: "/" },
   { label: "Programme", href: "/programme" },
   { label: "Pilotes", href: "/pilotes" },
+  { label: "Billetterie", href: "/billeterie" },
   { label: "Contact", href: "/contact" },
 ];
 
