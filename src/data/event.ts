@@ -112,7 +112,7 @@ export const eventInfoCards: EventInfoCard[] = [
     id: "schedule",
     title: "Programme",
     value: "Bientôt disponible",
-    description: "Emplacement réservé — Le programme complet des courses sera publié ici.",
+    description: "Emplacement réservé — Consultez la page Programme pour le déroulé provisoire.",
     icon: "list",
   },
   {

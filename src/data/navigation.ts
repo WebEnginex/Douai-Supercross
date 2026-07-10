@@ -2,12 +2,14 @@ import type { FooterLink, NavLink, SocialLink } from "@/types";
 
 export const navLinks: NavLink[] = [
   { label: "Accueil", href: "/" },
+  { label: "Programme", href: "/programme" },
   { label: "Pilotes", href: "/pilotes" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const footerNavLinks: FooterLink[] = [
   { label: "Accueil", href: "/" },
+  { label: "Programme", href: "/programme" },
   { label: "Pilotes", href: "/pilotes" },
   { label: "Contact", href: "/contact" },
 ];

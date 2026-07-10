@@ -61,3 +61,17 @@ export interface FooterLink {
   label: string;
   href: string;
 }
+
+export interface ScheduleItem {
+  id: string;
+  time: string;
+  title: string;
+  description: string;
+  category: "all" | "public" | "vip";
+  highlight?: boolean;
+}
+
+export interface ScheduleCategory {
+  id: string;
+  label: string;
+}
