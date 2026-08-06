@@ -8,19 +8,19 @@ const tierStyles: Record<
   { accent: string; glow: string; label: string }
 > = {
   category1: {
+    accent: "from-zinc-300 to-zinc-500",
+    glow: "group-hover:shadow-zinc-400/10",
+    label: "text-zinc-300",
+  },
+  category2: {
+    accent: "from-zinc-500 to-zinc-600",
+    glow: "group-hover:shadow-zinc-500/10",
+    label: "text-zinc-400",
+  },
+  category3: {
     accent: "from-brand-red to-red-700",
     glow: "group-hover:shadow-brand-red/20",
     label: "text-brand-red",
-  },
-  category2: {
-    accent: "from-sky-500 to-cyan-600",
-    glow: "group-hover:shadow-sky-500/15",
-    label: "text-sky-400",
-  },
-  category3: {
-    accent: "from-zinc-400 to-zinc-600",
-    glow: "group-hover:shadow-zinc-500/10",
-    label: "text-zinc-400",
   },
 };
 
@@ -36,20 +36,27 @@ interface TicketCardProps {
 export function TicketCard({ ticket, className }: TicketCardProps) {
   const styles = tierStyles[ticket.tier];
   const { priceLabels, priceNotes, cta } = ticketsPageLabels;
+  const isFeatured = Boolean(ticket.featured);
 
   return (
-    <article className={cn("group relative flex flex-col h-full", className)}>
+    <article
+      className={cn(
+        "group relative flex flex-col h-full",
+        isFeatured && "md:-mt-1 md:mb-1",
+        className
+      )}
+    >
       <a
         href={ticket.purchaseUrl}
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
           "flex flex-col h-full bg-surface border rounded-lg overflow-hidden transition-all duration-300",
-          "hover:border-white/20 hover:-translate-y-1 hover:shadow-xl",
+          "hover:-translate-y-1 hover:shadow-xl",
           styles.glow,
-          ticket.featured
-            ? "border-brand-red/40 shadow-lg shadow-brand-red/5"
-            : "border-white/5"
+          isFeatured
+            ? "border-brand-red/45 shadow-lg shadow-brand-red/10 hover:border-brand-red/60"
+            : "border-white/5 hover:border-white/20"
         )}
         aria-label={`${cta} — ${ticket.name}`}
       >
@@ -77,7 +84,12 @@ export function TicketCard({ ticket, className }: TicketCardProps) {
           <ul className="space-y-3 mb-8 flex-1">
             <li className="flex items-center justify-between gap-3 border-b border-white/5 pb-3">
               <span className="text-sm text-zinc-300">{priceLabels.normal}</span>
-              <span className="font-display text-xl font-bold text-white">
+              <span
+                className={cn(
+                  "font-display text-xl font-bold",
+                  isFeatured ? "text-brand-red" : "text-white"
+                )}
+              >
                 {formatPrice(ticket.prices.normal)}
               </span>
             </li>
@@ -111,7 +123,14 @@ export function TicketCard({ ticket, className }: TicketCardProps) {
             </li>
           </ul>
 
-          <span className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-4 bg-brand-red text-white font-semibold text-sm uppercase tracking-widest rounded-sm transition-colors group-hover:bg-brand-red-dark">
+          <span
+            className={cn(
+              "inline-flex items-center justify-center gap-2 w-full py-3.5 px-4 font-semibold text-sm uppercase tracking-widest rounded-sm transition-colors",
+              isFeatured
+                ? "bg-brand-red text-white group-hover:bg-brand-red-dark"
+                : "bg-transparent text-white border border-white/25 group-hover:border-white/50 group-hover:bg-white/5"
+            )}
+          >
             {cta}
             <ExternalLink size={16} aria-hidden="true" />
           </span>
