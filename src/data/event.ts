@@ -111,8 +111,9 @@ export const eventInfoCards: EventInfoCard[] = [
   {
     id: "schedule",
     title: "Programme",
-    value: "Bientôt disponible",
-    description: "Emplacement réservé — Consultez la page Programme pour le déroulé provisoire.",
+    value: "17h30 → 22h00",
+    description:
+      "Ouverture des portes à 17h30, SuperPole, courses et finales à 22h00. Voir la page Programme.",
     icon: "list",
   },
   {
@@ -124,10 +125,10 @@ export const eventInfoCards: EventInfoCard[] = [
   },
   {
     id: "vip",
-    title: "Espace VIP",
-    value: "Pass VIP disponible",
+    title: "Emplacements",
+    value: "3 catégories",
     description:
-      "Emplacement réservé — Découvrez le Pass VIP et les formules premium sur la page Billetterie.",
+      "Catégorie 1, 2 ou 3 selon votre emplacement dans l'Arena — tarifs Normal, Groupe et Enfant.",
     icon: "star",
   },
   {

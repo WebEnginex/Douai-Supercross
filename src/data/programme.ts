@@ -1,94 +1,74 @@
-import type { ScheduleCategory, ScheduleItem } from "@/types";
+import type { ScheduleItem } from "@/types";
 
 export const programmePageLabels = {
   title: "Programme",
   subtitle: "Déroulé de la soirée",
   disclaimer:
-    "Programme provisoire — emplacement réservé. Les horaires et activités seront confirmés et mis à jour dans ce fichier de données.",
-  emptyState: "Aucun élément ne correspond à ce filtre.",
+    "Programme unique pour tous les spectateurs. Les horaires peuvent être légèrement ajustés le jour J.",
   billetterieCta: "Réserver vos places",
 } as const;
-
-export const scheduleCategories: ScheduleCategory[] = [
-  { id: "all", label: "Programme complet" },
-  { id: "public", label: "Grand public" },
-  { id: "vip", label: "VIP" },
-];
 
 export const scheduleItems: ScheduleItem[] = [
   {
     id: "schedule-01",
-    time: "Horaire — emplacement réservé",
+    time: "17h30",
     title: "Ouverture des portes",
-    description:
-      "Description — emplacement réservé. Remplacez par les détails d'accueil du public.",
-    category: "public",
+    description: "Accueil du public et accès aux tribunes.",
   },
   {
     id: "schedule-02",
-    time: "Horaire — emplacement réservé",
-    title: "Accès VIP & Paddock",
+    time: "18h00",
+    title: "Séance de dédicaces",
     description:
-      "Description — emplacement réservé. Remplacez par les prestations réservées aux pass VIP.",
-    category: "vip",
+      "Rencontrez les 6 meilleurs pilotes mondiaux et repartez avec un autographe.",
     highlight: true,
   },
   {
     id: "schedule-03",
-    time: "Horaire — emplacement réservé",
-    title: "Essais & reconnaissance du circuit",
+    time: "19h00",
+    title: "Cérémonie d'ouverture",
     description:
-      "Description — emplacement réservé. Remplacez par le déroulé des essais officiels.",
-    category: "all",
+      "Présentation des meilleurs pilotes SuperEnduro GP et lancement officiel de la soirée.",
+    highlight: true,
   },
   {
     id: "schedule-04",
-    time: "Horaire — emplacement réservé",
-    title: "Séance autographes",
-    description:
-      "Description — emplacement réservé. Remplacez par le lieu et les pilotes présents.",
-    category: "public",
+    time: "19h45",
+    title: "SuperPole",
+    description: "Qualifications décisives pour déterminer les meilleures positions de départ.",
+    highlight: true,
   },
   {
     id: "schedule-05",
-    time: "Horaire — emplacement réservé",
-    title: "Qualifications",
-    description:
-      "Description — emplacement réservé. Remplacez par le format et la durée des qualifications.",
-    category: "all",
+    time: "19h55",
+    title: "Premières courses toutes catégories",
+    description: "Première série de courses toutes catégories confondues.",
     highlight: true,
   },
   {
     id: "schedule-06",
-    time: "Horaire — emplacement réservé",
-    title: "Pause technique",
-    description:
-      "Description — emplacement réservé. Remplacez par les animations ou services disponibles.",
-    category: "public",
+    time: "20h45",
+    title: "Entracte",
+    description: "Pause — restauration, merchandising et ambiance dans l'Arena.",
   },
   {
     id: "schedule-07",
-    time: "Horaire — emplacement réservé",
-    title: "Finale Super Enduro",
-    description:
-      "Description — emplacement réservé. Remplacez par le détail des manches de finale.",
-    category: "all",
+    time: "21h00",
+    title: "Deuxièmes courses toutes catégories",
+    description: "Deuxième série de courses toutes catégories confondues.",
     highlight: true,
   },
   {
     id: "schedule-08",
-    time: "Horaire — emplacement réservé",
-    title: "Cérémonie de remise des prix",
-    description:
-      "Description — emplacement réservé. Remplacez par le protocole de podium et les accès.",
-    category: "all",
+    time: "21h50",
+    title: "Entracte",
+    description: "Dernière pause avant les finales.",
   },
   {
     id: "schedule-09",
-    time: "Horaire — emplacement réservé",
-    title: "Fin de l'événement",
-    description:
-      "Description — emplacement réservé. Remplacez par les horaires de fermeture et consignes de sortie.",
-    category: "all",
+    time: "22h00",
+    title: "Finales",
+    description: "Les finales Super Enduro — le moment culminant de la soirée.",
+    highlight: true,
   },
 ];

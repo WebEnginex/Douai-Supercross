@@ -68,23 +68,22 @@ export interface ScheduleItem {
   time: string;
   title: string;
   description: string;
-  category: "all" | "public" | "vip";
   highlight?: boolean;
 }
 
-export interface ScheduleCategory {
-  id: string;
-  label: string;
+export interface TicketPrices {
+  normal: number;
+  group: number;
+  child: number;
 }
 
 export interface Ticket {
   id: string;
   name: string;
-  price: string;
   description: string;
-  features: string[];
+  prices: TicketPrices;
   purchaseUrl: string;
-  tier: "standard" | "premium" | "vip" | "paddock";
+  tier: "category1" | "category2" | "category3";
   featured?: boolean;
   badge?: string;
 }

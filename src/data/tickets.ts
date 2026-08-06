@@ -2,80 +2,72 @@ import type { Ticket } from "@/types";
 
 export const ticketsPageLabels = {
   title: "Billetterie",
-  subtitle: "Choisissez votre expérience",
+  subtitle: "Choisissez votre emplacement",
   description:
-    "Sélectionnez la formule qui correspond à votre soirée. Tous les achats sont finalisés sur la plateforme partenaire officielle.",
+    "Trois catégories selon votre emplacement dans l'Arena. Chaque catégorie propose un tarif Normal, Groupe (à partir de 10 personnes) et Enfant (moins de 10 ans).",
   disclaimer:
-    "Tarifs et disponibilités — emplacements réservés. Remplacez les prix, descriptions et liens d'achat dans src/data/tickets.ts.",
+    "La catégorie correspond à l'emplacement dans l'Arena. Les achats sont finalisés sur la plateforme partenaire officielle.",
   externalNote:
     "Vous serez redirigé vers le site partenaire de billetterie pour finaliser votre commande en toute sécurité.",
   cta: "Réserver",
-  featuredBadge: "Recommandé",
+  featuredBadge: "Meilleure vue",
+  priceLabels: {
+    normal: "Normal",
+    group: "Groupe",
+    child: "Enfant",
+  },
+  priceNotes: {
+    group: "À partir de 10 personnes",
+    child: "Moins de 10 ans",
+  },
 } as const;
 
 export const ticketsPreviewLabels = {
   title: "Billetterie",
   subtitle: "Réservez votre place",
-  viewAll: "Voir toutes les offres",
+  viewAll: "Voir les tarifs",
 } as const;
 
 export const tickets: Ticket[] = [
   {
-    id: "ticket-standard",
-    name: "Tribune Standard",
-    price: "Prix — emplacement réservé",
+    id: "ticket-cat-1",
+    name: "Catégorie 1",
     description:
-      "Description — emplacement réservé. Accès tribune avec vue sur l'ensemble du circuit.",
-    features: [
-      "Accès tribune — emplacement réservé",
-      "Entrée le jour J — emplacement réservé",
-      "Programme officiel — emplacement réservé",
-    ],
-    purchaseUrl: "https://www.billetterie-partenaire-placeholder.com/tribune-standard",
-    tier: "standard",
-  },
-  {
-    id: "ticket-premium",
-    name: "Tribune Premium",
-    price: "Prix — emplacement réservé",
-    description:
-      "Description — emplacement réservé. Placement privilégié et confort amélioré pour vivre la course au plus près.",
-    features: [
-      "Placement premium — emplacement réservé",
-      "Accès prioritaire — emplacement réservé",
-      "Zone dédiée — emplacement réservé",
-    ],
-    purchaseUrl: "https://www.billetterie-partenaire-placeholder.com/tribune-premium",
-    tier: "premium",
-  },
-  {
-    id: "ticket-vip",
-    name: "Pass VIP",
-    price: "Prix — emplacement réservé",
-    description:
-      "Description — emplacement réservé. Expérience haut de gamme avec services exclusifs et accès privilégiés.",
-    features: [
-      "Espace VIP — emplacement réservé",
-      "Restauration — emplacement réservé",
-      "Rencontre pilotes — emplacement réservé",
-    ],
-    purchaseUrl: "https://www.billetterie-partenaire-placeholder.com/pass-vip",
-    tier: "vip",
+      "Emplacement privilégié dans l'Arena — la meilleure vue sur le circuit.",
+    prices: {
+      normal: 57,
+      group: 48,
+      child: 46,
+    },
+    purchaseUrl: "https://www.billetterie-partenaire-placeholder.com/categorie-1",
+    tier: "category1",
     featured: true,
-    badge: "Recommandé",
+    badge: "Meilleure vue",
   },
   {
-    id: "ticket-paddock",
-    name: "Paddock Expérience",
-    price: "Prix — emplacement réservé",
+    id: "ticket-cat-2",
+    name: "Catégorie 2",
     description:
-      "Description — emplacement réservé. Immersion totale dans les coulisses de la compétition.",
-    features: [
-      "Accès paddock — emplacement réservé",
-      "Visite des stands — emplacement réservé",
-      "Hospitality — emplacement réservé",
-    ],
-    purchaseUrl: "https://www.billetterie-partenaire-placeholder.com/paddock",
-    tier: "paddock",
+      "Emplacement intermédiaire — excellent équilibre entre vue et tarif.",
+    prices: {
+      normal: 48,
+      group: 39,
+      child: 38,
+    },
+    purchaseUrl: "https://www.billetterie-partenaire-placeholder.com/categorie-2",
+    tier: "category2",
+  },
+  {
+    id: "ticket-cat-3",
+    name: "Catégorie 3",
+    description:
+      "Emplacement accessible — vivez l'ambiance Super Enduro à tarif avantageux.",
+    prices: {
+      normal: 39,
+      group: 30,
+      child: 29,
+    },
+    purchaseUrl: "https://www.billetterie-partenaire-placeholder.com/categorie-3",
+    tier: "category3",
   },
 ];

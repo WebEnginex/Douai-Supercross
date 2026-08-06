@@ -17,13 +17,13 @@ export const faqItems: FAQItem[] = [
     id: "faq-03",
     question: "Comment acheter des billets ?",
     answer:
-      "Rendez-vous sur la page Billetterie pour consulter les formules disponibles (Tribune Standard, Premium, Pass VIP et Paddock Expérience). Chaque offre vous redirige vers la plateforme partenaire officielle pour finaliser votre achat en toute sécurité.",
+      "Rendez-vous sur la page Billetterie pour choisir votre catégorie d'emplacement dans l'Arena (Catégorie 1, 2 ou 3). Chaque catégorie propose un tarif Normal, Groupe (à partir de 10 personnes) et Enfant (moins de 10 ans). L'achat se finalise sur la plateforme partenaire officielle.",
   },
   {
     id: "faq-04",
-    question: "Que comprend l'accès VIP ?",
+    question: "Quelle catégorie choisir ?",
     answer:
-      "Le Pass VIP inclut un accès à l'espace VIP, la restauration et une rencontre avec les pilotes — détails et tarifs sur la page Billetterie. Remplacez ces informations par le contenu définitif du client.",
+      "La catégorie correspond à votre emplacement dans l'Arena. La Catégorie 1 offre la meilleure vue, la Catégorie 2 un excellent équilibre vue/tarif, et la Catégorie 3 l'accès le plus avantageux pour vivre l'ambiance Super Enduro.",
   },
   {
     id: "faq-05",
@@ -33,8 +33,8 @@ export const faqItems: FAQItem[] = [
   },
   {
     id: "faq-06",
-    question: "Question — emplacement réservé : Puis-je venir avec des enfants ?",
+    question: "Puis-je venir avec des enfants ?",
     answer:
-      "Réponse — emplacement réservé. Remplacez par la politique d'âge, les espaces famille et les informations sur les billets enfants.",
+      "Oui. Un tarif Enfant (moins de 10 ans) est proposé dans chaque catégorie. Consultez la page Billetterie pour les tarifs détaillés.",
   },
 ];

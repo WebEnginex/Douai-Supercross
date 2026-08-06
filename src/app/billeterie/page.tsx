@@ -5,7 +5,7 @@ import { BilleterieContent } from "./BilleterieContent";
 
 export const metadata: Metadata = createMetadata({
   title: "Billetterie",
-  description: `Réservez vos places pour ${siteConfig.name}. Tribune Standard, Premium, Pass VIP et Paddock Expérience — achat sécurisé via notre partenaire officiel.`,
+  description: `Réservez vos places pour ${siteConfig.name}. Trois catégories d'emplacement dans l'Arena, avec tarifs Normal, Groupe et Enfant.`,
   path: "/billeterie",
 });
 

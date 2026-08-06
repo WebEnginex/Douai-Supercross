@@ -17,13 +17,17 @@ export function BilleterieContent() {
         </p>
 
         <div className="max-w-3xl mx-auto mb-12 p-4 md:p-5 bg-brand-red/5 border border-brand-red/20 rounded-lg flex gap-3">
-          <Info size={20} className="text-brand-red shrink-0 mt-0.5" aria-hidden="true" />
+          <Info
+            size={20}
+            className="text-brand-red shrink-0 mt-0.5"
+            aria-hidden="true"
+          />
           <p className="text-zinc-400 text-sm leading-relaxed">
             {ticketsPageLabels.disclaimer}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {tickets.map((ticket) => (
             <TicketCard key={ticket.id} ticket={ticket} />
           ))}
