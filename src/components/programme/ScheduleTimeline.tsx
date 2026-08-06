@@ -56,11 +56,6 @@ export function ScheduleTimeline({ items }: ScheduleTimelineProps) {
                   <Clock size={14} />
                   {item.time}
                 </span>
-                {item.highlight && (
-                  <span className="text-xs px-2 py-1 bg-brand-red/10 text-brand-red rounded-sm uppercase tracking-widest">
-                    Moment clé
-                  </span>
-                )}
               </div>
               <h3 className="font-display text-xl md:text-2xl font-bold text-white mb-2">
                 {item.title}
