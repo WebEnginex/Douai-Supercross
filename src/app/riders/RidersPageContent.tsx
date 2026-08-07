@@ -22,10 +22,10 @@ export function RidersPageContent() {
   const gridRiders = visibleRiders.slice(3);
 
   return (
-    <div className="relative pt-24 md:pt-28 pb-20 bg-background min-h-[100dvh] overflow-hidden">
+    <div className="relative pt-24 md:pt-28 pb-16 sm:pb-20 bg-background min-h-[100dvh] overflow-hidden">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-[42rem] bg-[radial-gradient(ellipse_at_top,rgba(227,6,19,0.12),transparent_55%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[36rem] sm:h-[42rem] bg-[radial-gradient(ellipse_at_top,rgba(227,6,19,0.12),transparent_55%)]"
       />
       <div
         aria-hidden
@@ -45,11 +45,11 @@ export function RidersPageContent() {
         />
 
         <div
-          className="flex justify-center mb-10 md:mb-14"
+          className="flex justify-center mb-8 sm:mb-10 md:mb-14"
           role="tablist"
           aria-label="Catégories de pilotes"
         >
-          <div className="inline-flex p-1 border border-white/10 bg-black/40 backdrop-blur-sm">
+          <div className="inline-flex w-full max-w-md sm:w-auto sm:max-w-none p-1 border border-white/10 bg-black/40 backdrop-blur-sm">
             {riderCategories.map((category) => {
               const isActive = activeCategory === category.id;
               return (
@@ -60,7 +60,8 @@ export function RidersPageContent() {
                   aria-selected={isActive}
                   onClick={() => setActiveCategory(category.id)}
                   className={cn(
-                    "relative min-w-[8rem] px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] transition-colors",
+                    "relative flex-1 sm:flex-none min-w-0 sm:min-w-[8rem] px-4 sm:px-6 py-2.5 sm:py-3",
+                    "text-xs sm:text-sm font-semibold uppercase tracking-[0.14em] sm:tracking-[0.18em] transition-colors",
                     isActive ? "text-white" : "text-zinc-500 hover:text-zinc-200"
                   )}
                 >
@@ -90,24 +91,33 @@ export function RidersPageContent() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.35 }}
-              className="space-y-1.5 sm:space-y-2 md:space-y-2.5"
+              className="space-y-2 sm:space-y-2.5 md:space-y-3"
             >
-              {/* Starting-three — large portraits */}
-              <div className="group/grid grid grid-cols-1 sm:grid-cols-3 gap-1.5 sm:gap-2 md:gap-2.5">
-                {featuredRiders.map((rider, index) => (
-                  <RiderCard
-                    key={rider.id}
-                    rider={rider}
-                    index={index}
-                    featured
-                    priority
-                  />
-                ))}
+              {/* Starting three — scroll on narrow phones, row from sm */}
+              <div className="-mx-4 px-4 sm:mx-0 sm:px-0">
+                <div
+                  className={cn(
+                    "group/grid flex gap-2 sm:grid sm:grid-cols-3 sm:gap-2.5 md:gap-3",
+                    "overflow-x-auto snap-x snap-mandatory sm:overflow-visible",
+                    "pb-1 sm:pb-0 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                  )}
+                >
+                  {featuredRiders.map((rider, index) => (
+                    <RiderCard
+                      key={rider.id}
+                      rider={rider}
+                      index={index}
+                      featured
+                      priority
+                      className="w-[78%] max-w-[20rem] shrink-0 snap-center sm:w-auto sm:max-w-none sm:shrink"
+                    />
+                  ))}
+                </div>
               </div>
 
-              {/* Rest of the field — dense pack */}
+              {/* Rest of the field */}
               {gridRiders.length > 0 && (
-                <div className="group/grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-1.5 sm:gap-2 md:gap-2.5">
+                <div className="group/grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-2.5 md:gap-3">
                   {gridRiders.map((rider, index) => (
                     <RiderCard
                       key={rider.id}

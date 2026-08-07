@@ -5,7 +5,7 @@ export interface Rider {
   /** Numéro de course (à confirmer / remplacer) */
   number: string;
   category: RiderCategory;
-  /** Utilisé pour l'attribut alt de l'image */
+  /** Nom affiché sur la carte (dérivé du fichier image) */
   name: string;
   imageSrc: string;
 }
