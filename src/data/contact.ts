@@ -1,10 +1,9 @@
 import type { ContactCategory } from "@/types";
-import { venueConfig } from "@/data/site";
+import { siteConfig, venueConfig } from "@/data/site";
 
 export const organizerInfo = {
-  name: "Nom de l'organisateur",
+  name: siteConfig.name,
   email: "E-mail de l'organisateur",
-  phone: "Téléphone de l'organisateur",
   venueName: venueConfig.name,
   address: venueConfig.fullAddress,
   addressLines: venueConfig.displayLines,
@@ -27,7 +26,6 @@ export const contactPageLabels = {
   subtitle: "Nous contacter",
   organizer: "Organisateur",
   email: "E-mail",
-  phone: "Téléphone",
   venue: "Lieu",
   sendMessage: "Envoyer un message",
   form: {

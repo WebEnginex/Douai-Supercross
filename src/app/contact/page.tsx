@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, Phone, MapPin, User } from "lucide-react";
+import { Mail, MapPin, User } from "lucide-react";
 import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/data/site";
 import { organizerInfo, contactPageLabels } from "@/data/contact";
@@ -44,18 +44,6 @@ export default function ContactPage() {
                   {contactPageLabels.email}
                 </h3>
                 <p className="text-zinc-400">{organizerInfo.email}</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-sm bg-brand-red/10 flex items-center justify-center shrink-0">
-                <Phone size={20} className="text-brand-red" />
-              </div>
-              <div>
-                <h3 className="text-white font-semibold mb-1">
-                  {contactPageLabels.phone}
-                </h3>
-                <p className="text-zinc-400">{organizerInfo.phone}</p>
               </div>
             </div>
 
