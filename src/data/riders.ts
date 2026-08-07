@@ -14,89 +14,108 @@ export const riderCategories: { id: RiderCategory; label: string }[] = [
 ];
 
 /**
- * Prestige : noms + numéros officiels SuperEnduro (liste fournie).
- * Photos absentes pour Lettenbichler, Fernandez Serra, Garcia.
- * Photos présentes mais hors liste (non affichées) : Cooper, Will, Jordi.
- * Junior : numéros provisoires.
+ * Prestige : ordre + numéros officiels SuperEnduro.
+ * Junior : numéros provisoires (à mettre à jour plus tard).
  */
 export const riders: Rider[] = [
-  // Prestige — ordre liste officielle, uniquement si photo dispo
+  // Prestige — ordre liste officielle
   {
     id: "prestige-billy",
     number: "57",
     category: "prestige",
     name: "Billy Bolt",
-    imageSrc: "/images/pilotes_prestige/Billy-kwadrat.jpg",
+    imageSrc: "/images/pilotes_prestige/Billy-1-1.jpg",
   },
   {
     id: "prestige-jonathan",
     number: "22",
     category: "prestige",
     name: "Jonathan Walker",
-    imageSrc: "/images/pilotes_prestige/Jonny-kwadrat.jpg",
+    imageSrc: "/images/pilotes_prestige/Jonny-1-.jpg",
   },
   {
     id: "prestige-mitchell",
     number: "12",
     category: "prestige",
     name: "Mitchell Brightmore",
-    imageSrc: "/images/pilotes_prestige/Mitch-kwadrat.jpg",
+    imageSrc: "/images/pilotes_prestige/Mitch-1-1.jpg",
   },
   {
     id: "prestige-eddie",
     number: "42",
     category: "prestige",
     name: "Eddie Karlsson",
-    imageSrc: "/images/pilotes_prestige/Eddie-kwadrat.jpg",
+    imageSrc: "/images/pilotes_prestige/Eddie-1-.jpg",
   },
   {
     id: "prestige-toby",
     number: "212",
     category: "prestige",
     name: "Toby Martyn",
-    imageSrc: "/images/pilotes_prestige/Toby-kwadrat.jpg",
+    imageSrc: "/images/pilotes_prestige/Toby-1-1.jpg",
+  },
+  {
+    id: "prestige-manuel",
+    number: "304",
+    category: "prestige",
+    name: "Manuel Lettenbichler",
+    imageSrc: "/images/pilotes_prestige/Mani-1.jpg",
   },
   {
     id: "prestige-tim",
     number: "96",
     category: "prestige",
     name: "Tim Apolle",
-    imageSrc: "/images/pilotes_prestige/Tim-kwadrat.jpg",
+    imageSrc: "/images/pilotes_prestige/Tim-1-1.jpg",
   },
   {
     id: "prestige-alfredo",
     number: "89",
     category: "prestige",
     name: "Alfredo Gomez",
-    imageSrc: "/images/pilotes_prestige/Alfredo-kwadrat.jpg",
+    imageSrc: "/images/pilotes_prestige/Alfredo-1-1.jpg",
   },
   {
     id: "prestige-dominik",
     number: "501",
     category: "prestige",
     name: "Dominik Olszowy",
-    imageSrc: "/images/pilotes_prestige/Dominik-kwadrat.jpg",
+    imageSrc: "/images/pilotes_prestige/Dominik-1-1.jpg",
   },
   {
     id: "prestige-ashton",
     number: "7",
     category: "prestige",
     name: "Ashton Brightmore",
-    imageSrc: "/images/pilotes_prestige/Ash-kwadrat.jpg",
+    imageSrc: "/images/pilotes_prestige/Ash-1-1.jpg",
   },
   {
     id: "prestige-diogo",
     number: "21",
     category: "prestige",
     name: "Diogo Vieira",
-    imageSrc: "/images/pilotes_prestige/Diogo-kwadrat.jpg",
+    imageSrc: "/images/pilotes_prestige/Diogo-1.jpg",
+  },
+  {
+    id: "prestige-marc",
+    number: "56",
+    category: "prestige",
+    name: "Marc Fernandez Serra",
+    imageSrc: "/images/pilotes_prestige/Marc-1.jpg",
+  },
+  {
+    id: "prestige-josep",
+    number: "26",
+    category: "prestige",
+    name: "Josep Garcia",
+    imageSrc: "/images/pilotes_prestige/Josep-1.jpg",
   },
   {
     id: "prestige-harry",
     number: "16",
     category: "prestige",
     name: "Harry Edmondson",
-    imageSrc: "/images/pilotes_prestige/Harry-kwadrat.jpg",
+    imageSrc: "/images/pilotes_prestige/Harry-1.jpg",
   },
   {
     id: "prestige-aleksander",
