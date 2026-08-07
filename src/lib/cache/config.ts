@@ -8,7 +8,7 @@ export const CACHE_CONFIG = {
   // Médias à précharger au démarrage
   CRITICAL_MEDIA: [
     { url: '/images/background/supercross-sxtour-bg.webp?v=2025011', type: 'image' as const },
-    { url: '/images/partners/FFMOTO_LOGO.png', type: 'image' as const },
+    { url: '/images/partners/FederationFrançaiseMotoLogo.png', type: 'image' as const },
     { url: '/images/affiche/affiche_supercross_douai.webp', type: 'image' as const },
     { url: '/images/flags/france.svg', type: 'image' as const },
     { url: '/images/marques/yamaha.svg', type: 'image' as const }
@@ -40,11 +40,14 @@ export const CACHE_CONFIG = {
   
   // Logos partenaires
   PARTNERS_MEDIA: [
-    { url: '/images/partners/FFMOTO_LOGO.png', type: 'image' as const },
-    { url: '/images/partners/FFMOTO_PROFIL_PIC_LOGO.webp', type: 'image' as const },
-    { url: '/images/partners/Logo_Gayant-Expo-Douai.webp', type: 'image' as const },
-    { url: '/images/partners/Logo_Nord-le-Departement.webp', type: 'image' as const },
-    { url: '/images/partners/Logo_Region-hauts-de-France.webp', type: 'image' as const },
+    { url: '/images/partners/FederationFrançaiseMotoLogo.png', type: 'image' as const },
+    { url: '/images/partners/FIMLogo.webp', type: 'image' as const },
+    { url: '/images/partners/RegionIleDeFranceLogo.webp', type: 'image' as const },
+    { url: '/images/partners/SeineSaintDenisDepartementLogo.webp', type: 'image' as const },
+    { url: '/images/partners/24MxLogo.webp', type: 'image' as const },
+    { url: '/images/partners/AcerbisLogo.png', type: 'image' as const },
+    { url: '/images/partners/BlackEnergyLogo.webp', type: 'image' as const },
+    { url: '/images/partners/DiverseExtremeTeamLogo.webp', type: 'image' as const },
   ]
 };
 

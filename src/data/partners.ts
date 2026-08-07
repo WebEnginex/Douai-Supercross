@@ -24,12 +24,12 @@ export const partners: Partner[] = [
   {
     id: "partner-24mx",
     name: "24MX",
-    logoSrc: "/images/partners/24MxLogo.png",
+    logoSrc: "/images/partners/24MxLogo.webp",
   },
   {
     id: "partner-acerbis",
     name: "Acerbis",
-    logoSrc: "/images/partners/AcerbisLogo.webp",
+    logoSrc: "/images/partners/AcerbisLogo.png",
   },
   {
     id: "partner-black-energy",

@@ -93,7 +93,7 @@ export function useAutoMediaCache(url: string, type: MediaType, options: UseAuto
   // Images critiques qui doivent toujours essayer le cache même sur mobile
   const criticalImages = [
     '/images/background/supercross-sxtour-bg.webp',
-    '/images/partners/FFMOTO_LOGO.png',
+    '/images/partners/FederationFrançaiseMotoLogo.png',
     '/images/flags/france.svg'
   ];
 
