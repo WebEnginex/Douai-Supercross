@@ -1,7 +1,7 @@
 import type { Rider } from "@/types";
 
 const riderBiography =
-  "Biographie — emplacement réservé. Remplacez par un court profil du pilote. Mettez en avant ses palmarès, son style de pilotage et son historique en championnat.";
+  "Profil du pilote à confirmer. Style, palmarès et parcours seront mis à jour dès validation du plateau officiel.";
 
 export const riders: Rider[] = [
   { id: "rider-01", name: "Nom du pilote", country: "Pays", team: "Nom de l'équipe", manufacturer: "Constructeur", biography: riderBiography, imagePlaceholder: "Photo du pilote" },
@@ -22,8 +22,8 @@ export const riderPreviewCount = 6;
 
 export const ridersPageLabels = {
   title: "Pilotes",
-  subtitle: "Liste complète",
-  searchPlaceholder: "Rechercher des pilotes...",
+  subtitle: "Le plateau international",
+  searchPlaceholder: "Rechercher un pilote...",
   allCountries: "Tous les pays",
   allManufacturers: "Tous les constructeurs",
   emptyState: "Aucun pilote ne correspond à vos filtres. Essayez d'ajuster votre recherche.",

@@ -42,6 +42,6 @@ export const contactPageLabels = {
     messagePlaceholder: "Votre message",
     submit: "Envoyer le message",
     success:
-      "Emplacement réservé — Message enregistré dans la console. Connectez votre service d'e-mail lorsque vous serez prêt.",
+      "Merci ! Votre message a bien été envoyé. On vous répond dès que possible.",
   },
 } as const;

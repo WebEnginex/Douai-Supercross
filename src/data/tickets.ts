@@ -4,11 +4,11 @@ export const ticketsPageLabels = {
   title: "Billetterie",
   subtitle: "Choisissez votre emplacement",
   description:
-    "Trois catégories selon votre emplacement dans l'Arena. Chaque catégorie propose un tarif Normal, Groupe (à partir de 10 personnes) et Enfant (moins de 10 ans).",
+    "Trois catégories selon votre place dans l'Arena. Tarif Normal, Groupe (dès 10 personnes) ou Enfant (moins de 10 ans) — à vous de jouer.",
   disclaimer:
-    "La catégorie correspond à l'emplacement dans l'Arena. Les achats sont finalisés sur la plateforme partenaire officielle.",
+    "La catégorie correspond à votre emplacement dans l'Arena. Paiement sécurisé via notre partenaire billetterie.",
   externalNote:
-    "Vous serez redirigé vers le site partenaire de billetterie pour finaliser votre commande en toute sécurité.",
+    "Un clic et vous basculez sur la plateforme partenaire pour finaliser votre commande.",
   cta: "Réserver",
   featuredBadge: "Le plus choisi",
   priceLabels: {
@@ -24,7 +24,7 @@ export const ticketsPageLabels = {
 
 export const ticketsPreviewLabels = {
   title: "Billetterie",
-  subtitle: "Réservez votre place",
+  subtitle: "27 février 2027 · Arena Grand Paris",
   viewAll: "Voir les tarifs",
 } as const;
 

@@ -3,11 +3,8 @@ export const venueConfig = {
   street: "1 Av. Traversière",
   postalCode: "93290",
   city: "Tremblay-en-France",
-  /** Ligne courte : Arena Grand Paris */
   shortLabel: "Arena Grand Paris",
-  /** Ligne complète pour affichage */
   fullAddress: "1 Av. Traversière, 93290 Tremblay-en-France",
-  /** Affichage multiligne / contact */
   displayLines: [
     "Arena Grand Paris",
     "1 Av. Traversière",
@@ -21,14 +18,13 @@ export const venueConfig = {
 export const siteConfig = {
   name: "GP Super Enduro Paris",
   shortName: "GP Super Enduro",
-  tagline: "L'expérience Super Enduro indoor ultime",
+  tagline: "Le Super Enduro indoor débarque à Paris",
   description:
-    "Vivez l'action Super Enduro de classe mondiale au GP Super Enduro Paris — Arena Grand Paris, Tremblay-en-France.",
-  /** URL de production — sur Vercel, getSiteUrl() utilise VERCEL_URL automatiquement. */
+    "GP Super Enduro Paris — 27 février 2027 à l'Arena Grand Paris. Une soirée de courses indoor avec les meilleurs pilotes du monde.",
   url: "https://www.gpsuperenduroparis.com",
   locale: "fr",
   themeColor: "#E30613",
   ogImage: "/images/og-placeholder.svg",
   footerDescription:
-    "GP Super Enduro Paris à l'Arena Grand Paris — 1 Av. Traversière, 93290 Tremblay-en-France.",
+    "Le 27 février 2027, le Super Enduro s'invite à l'Arena Grand Paris. Courses, dédicaces et finales sous le même toit.",
 } as const;

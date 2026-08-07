@@ -1,7 +1,8 @@
 export const footerLabels = {
   navigation: "Navigation",
   newsletter: "Infolettre",
-  newsletterDescription: "Emplacement réservé — Inscrivez-vous pour recevoir les actualités de l'événement.",
+  newsletterDescription:
+    "Billets, pilotes, actus — recevez les infos clés avant le 27 février.",
   emailPlaceholder: "Adresse e-mail",
   joinButton: "S'inscrire",
   followUs: "Suivez-nous",

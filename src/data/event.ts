@@ -2,20 +2,21 @@ import type { EventInfoCard } from "@/types";
 
 export const eventConfig = {
   name: "GP Super Enduro Paris",
-  edition: "Édition — emplacement réservé",
-  countdownTargetDate: "2099-12-31T18:00:00Z",
+  edition: "27 février 2027",
+  /** Ouverture des portes — 17h30 heure de Paris (CET, UTC+1) */
+  countdownTargetDate: "2027-02-27T17:30:00+01:00",
   hero: {
     title: "GP SUPER ENDURO PARIS",
-    subtitle: "Super Enduro International",
+    subtitle: "27 février 2027 · Arena Grand Paris",
     description:
-      "Description — emplacement réservé. Remplacez par le slogan de votre événement. Les meilleurs pilotes Super Enduro du monde se retrouvent pour une soirée de course indoor électrisante.",
+      "Une soirée indoor explosive : les meilleurs pilotes du monde, un circuit technique, et l'ambiance d'une Arena à pleine charge. Préparez-vous à vibrer.",
     primaryButton: {
       label: "Acheter des billets",
       href: "/billeterie",
     },
     secondaryButton: {
-      label: "Voir les pilotes",
-      href: "/pilotes",
+      label: "Voir le programme",
+      href: "/programme",
     },
     videoSrc: "/video/SuperEnduroPoland2023.webm",
     posterSrc: "/images/hero-poster.svg",
@@ -23,22 +24,22 @@ export const eventConfig = {
   },
   about: {
     title: "À propos de l'événement",
-    subtitle: "Sous-titre — emplacement réservé",
+    subtitle: "Le Super Enduro s'installe à Paris",
     paragraphs: [
-      "Paragraphe — emplacement réservé. Remplacez par une description convaincante du GP Super Enduro Paris. Cette section doit mettre en avant ce qui rend l'événement unique, son envergure internationale et l'expérience pleine d'adrénaline qui attend les spectateurs.",
-      "Paragraphe — emplacement réservé. Ajoutez des détails sur le format du championnat, l'ambiance du lieu et ce que les fans peuvent attendre le jour de la course. Tout le contenu ici est conçu pour être facilement remplacé sans modifier le code des composants.",
+      "Le GP Super Enduro Paris réunit le plateau international pour une soirée hors normes à l'Arena Grand Paris. Entre sauts, passages techniques et bagarres de positions, chaque course pousse les pilotes — et le public — dans le rouge.",
+      "De l'ouverture des portes à 17h30 jusqu'aux finales à 22h00, le programme enchaîne dédicaces, cérémonie d'ouverture, SuperPole et courses toutes catégories. Une expérience complète, pensée pour les fans comme pour ceux qui découvrent la discipline.",
     ],
     stats: [
-      { value: "Emplacement réservé", label: "Pilotes d'élite" },
-      { value: "Emplacement réservé", label: "Heures d'action" },
-      { value: "Emplacement réservé", label: "Capacité spectateurs" },
-      { value: "Emplacement réservé", label: "Nations représentées" },
+      { value: "6+", label: "Pilotes d'élite" },
+      { value: "4h+", label: "D'action" },
+      { value: "Arena", label: "Grand Paris" },
+      { value: "1 soirée", label: "Inoubliable" },
     ],
   },
   cta: {
-    title: "Soyez présent quand l'histoire s'écrit",
+    title: "Ne ratez pas le départ",
     description:
-      "Texte — emplacement réservé. Réservez votre place pour l'événement Super Enduro le plus attendu de la saison. Billets, expériences VIP et accès exclusifs vous attendent.",
+      "Places limitées à l'Arena Grand Paris. Choisissez votre catégorie, réservez dès maintenant et soyez là le 27 février 2027.",
     primaryButton: {
       label: "Acheter des billets",
       href: "/billeterie",
@@ -50,8 +51,8 @@ export const eventConfig = {
   },
   sections: {
     eventInfo: {
-      title: "Informations sur l'événement",
-      subtitle: "Tout ce dont vous avez besoin",
+      title: "Informations pratiques",
+      subtitle: "Tout pour préparer votre soirée",
     },
     ridersPreview: {
       title: "Pilotes d'élite",
@@ -59,27 +60,26 @@ export const eventConfig = {
       viewAll: "Voir tous les pilotes",
     },
     countdown: {
-      title: "Compte à rebours avant le jour J",
-      subtitle: "Date de l'événement",
-      configNote: "Date cible configurée dans",
+      title: "Compte à rebours",
+      subtitle: "27 février 2027 · 17h30",
     },
     gallery: {
       title: "Galerie",
-      subtitle: "Moments de la course",
+      subtitle: "L'ambiance Super Enduro",
     },
     partners: {
       title: "Nos partenaires",
-      subtitle: "Ils nous soutiennent",
+      subtitle: "Ils nous accompagnent",
     },
     faq: {
       title: "Questions fréquentes",
       subtitle: "Bon à savoir",
     },
     newsletter: {
-      title: "Restez informé",
+      title: "Restez dans la boucle",
       subtitle: "Infolettre",
       description:
-        "Emplacement réservé — Inscrivez-vous pour recevoir les actualités de l'événement, les annonces de pilotes et les offres exclusives.",
+        "Infos billets, annonces pilotes et actus de la soirée — directement dans votre boîte mail.",
       placeholder: "Adresse e-mail",
       button: "S'inscrire",
     },
@@ -89,9 +89,9 @@ export const eventConfig = {
 export const eventInfoCards: EventInfoCard[] = [
   {
     id: "date",
-    title: "Date de l'événement",
-    value: "Date de l'événement",
-    description: "Emplacement réservé — Remplacez par la date officielle de l'événement.",
+    title: "Date",
+    value: "27 février 2027",
+    description: "Une soirée unique — ouverture des portes à 17h30.",
     icon: "calendar",
   },
   {
@@ -103,24 +103,25 @@ export const eventInfoCards: EventInfoCard[] = [
   },
   {
     id: "hours",
-    title: "Horaires d'ouverture",
-    value: "Horaires d'ouverture",
-    description: "Emplacement réservé — Remplacez par les horaires d'ouverture des portes.",
+    title: "Horaires",
+    value: "17h30 → 22h00",
+    description: "Ouverture des portes à 17h30, finales à 22h00.",
     icon: "clock",
   },
   {
     id: "schedule",
     title: "Programme",
-    value: "17h30 → 22h00",
+    value: "Dédicaces · Courses · Finales",
     description:
-      "Ouverture des portes à 17h30, SuperPole, courses et finales à 22h00. Voir la page Programme.",
+      "SuperPole, courses toutes catégories et finales. Voir le détail sur la page Programme.",
     icon: "list",
   },
   {
     id: "parking",
     title: "Parking",
-    value: "Informations parking",
-    description: "Emplacement réservé — Remplacez par les détails et indications de parking.",
+    value: "Sur place",
+    description:
+      "Parkings à proximité de l'Arena. Arrivez un peu en avance pour profiter des dédicaces.",
     icon: "car",
   },
   {
@@ -128,21 +129,23 @@ export const eventInfoCards: EventInfoCard[] = [
     title: "Emplacements",
     value: "3 catégories",
     description:
-      "Catégorie 1, 2 ou 3 selon votre emplacement dans l'Arena — tarifs Normal, Groupe et Enfant.",
+      "Catégorie 1, 2 ou 3 selon votre place dans l'Arena — tarifs Normal, Groupe et Enfant.",
     icon: "star",
   },
   {
     id: "food",
-    title: "Espace restauration",
-    value: "Espace restauration",
-    description: "Emplacement réservé — Remplacez par les détails sur la restauration et les espaces food.",
+    title: "Restauration",
+    value: "Sur site",
+    description:
+      "Points de restauration et boissons disponibles tout au long de la soirée.",
     icon: "utensils",
   },
   {
     id: "merch",
-    title: "Merchandising",
+    title: "Boutique",
     value: "Merchandising",
-    description: "Emplacement réservé — Remplacez par les informations sur la boutique officielle.",
+    description:
+      "Retrouvez les produits officiels et souvenirs Super Enduro sur place.",
     icon: "shopping-bag",
   },
 ];

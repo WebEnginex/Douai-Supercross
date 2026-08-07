@@ -2,9 +2,9 @@ import type { ScheduleItem } from "@/types";
 
 export const programmePageLabels = {
   title: "Programme",
-  subtitle: "Déroulé de la soirée",
+  subtitle: "27 février 2027",
   disclaimer:
-    "Programme unique pour tous les spectateurs. Les horaires peuvent être légèrement ajustés le jour J.",
+    "Programme de la soirée pour tous les spectateurs. Les horaires peuvent être légèrement ajustés le jour J.",
   billetterieCta: "Réserver vos places",
 } as const;
 
