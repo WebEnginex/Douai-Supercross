@@ -13,24 +13,22 @@ export function BilleterieContent() {
           description={ticketsPageLabels.description}
         />
 
-        <div className="max-w-3xl mx-auto mb-12 p-4 md:p-5 bg-brand-red/5 border border-brand-red/20 rounded-lg flex gap-3">
+        <div className="max-w-2xl mx-auto mb-12 flex gap-3 text-zinc-400 text-sm leading-relaxed">
           <Info
-            size={20}
-            className="text-brand-red shrink-0 mt-0.5"
+            size={18}
+            className="text-zinc-500 shrink-0 mt-0.5"
             aria-hidden="true"
           />
-          <p className="text-zinc-400 text-sm leading-relaxed">
-            {ticketsPageLabels.disclaimer}
-          </p>
+          <p>{ticketsPageLabels.disclaimer}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 md:items-stretch max-w-5xl mx-auto md:pt-3">
           {tickets.map((ticket) => (
             <TicketCard key={ticket.id} ticket={ticket} />
           ))}
         </div>
 
-        <p className="text-center text-zinc-400 text-sm mt-12 max-w-xl mx-auto">
+        <p className="text-center text-zinc-500 text-sm mt-12 max-w-xl mx-auto">
           {ticketsPageLabels.externalNote}
         </p>
       </div>

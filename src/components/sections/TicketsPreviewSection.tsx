@@ -12,7 +12,7 @@ export function TicketsPreviewSection() {
           subtitle={ticketsPreviewLabels.subtitle}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 md:items-stretch max-w-5xl mx-auto md:pt-3">
           {tickets.map((ticket) => (
             <TicketCard key={ticket.id} ticket={ticket} />
           ))}
