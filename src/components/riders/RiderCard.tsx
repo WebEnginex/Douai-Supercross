@@ -47,7 +47,7 @@ export function RiderCard({
       >
         <Image
           src={rider.imageSrc}
-          alt={`${rider.name}, pilote n°${rider.number}`}
+          alt={`${rider.name}, n°${rider.number}`}
           fill
           priority={priority}
           quality={92}
@@ -59,35 +59,24 @@ export function RiderCard({
           className="object-cover object-center transition-transform duration-700 ease-out will-change-transform group-hover/rider:scale-[1.06]"
         />
 
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
         <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover/rider:opacity-100 bg-[radial-gradient(120%_80%_at_50%_120%,rgba(227,6,19,0.28),transparent_55%)]" />
 
-        {/* Race number — compact plate */}
-        <div
-          className={cn(
-            "absolute left-2 top-2 sm:left-3 sm:top-3",
-            "inline-flex items-baseline gap-0.5 bg-black/55 backdrop-blur-sm",
-            "border border-white/10 px-1.5 py-0.5 sm:px-2 sm:py-1"
-          )}
-        >
-          <span className="font-display text-[0.65rem] sm:text-xs font-bold text-brand-red leading-none">
-            #
-          </span>
-          <span
+        {/* Number + name — single bottom stack, no floating box */}
+        <div className="absolute inset-x-0 bottom-0 p-2.5 sm:p-3 md:p-4">
+          <p
             className={cn(
-              "font-display font-bold tabular-nums leading-none text-white tracking-tight",
-              featured ? "text-base sm:text-lg md:text-xl" : "text-sm sm:text-base"
+              "font-display font-bold tabular-nums leading-none tracking-tight text-brand-red",
+              "drop-shadow-[0_1px_8px_rgba(0,0,0,0.85)]",
+              featured ? "text-sm sm:text-base md:text-lg" : "text-xs sm:text-sm"
             )}
           >
+            <span className="text-[0.85em] opacity-90">#</span>
             {rider.number}
-          </span>
-        </div>
-
-        {/* Name */}
-        <div className="absolute inset-x-0 bottom-0 p-2.5 sm:p-3 md:p-4">
+          </p>
           <h3
             className={cn(
-              "font-display font-bold uppercase text-white leading-tight tracking-wide",
+              "mt-1 font-display font-bold uppercase text-white leading-[1.15] tracking-wide",
               "drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]",
               "line-clamp-2 break-words",
               featured

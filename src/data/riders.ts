@@ -14,115 +14,96 @@ export const riderCategories: { id: RiderCategory; label: string }[] = [
 ];
 
 /**
- * Numéros provisoires — remplacez par les numéros officiels dès confirmation.
- * Noms dérivés des fichiers images (prénoms Prestige complétés via grille SuperEnduro).
+ * Prestige : noms + numéros officiels SuperEnduro (liste fournie).
+ * Photos absentes pour Lettenbichler, Fernandez Serra, Garcia.
+ * Photos présentes mais hors liste (non affichées) : Cooper, Will, Jordi.
+ * Junior : numéros provisoires.
  */
 export const riders: Rider[] = [
-  // Prestige
-  {
-    id: "prestige-mitch",
-    number: "1",
-    category: "prestige",
-    name: "Mitch Brightmore",
-    imageSrc: "/images/pilotes_prestige/Mitch-kwadrat.jpg",
-  },
+  // Prestige — ordre liste officielle, uniquement si photo dispo
   {
     id: "prestige-billy",
-    number: "2",
+    number: "57",
     category: "prestige",
     name: "Billy Bolt",
     imageSrc: "/images/pilotes_prestige/Billy-kwadrat.jpg",
   },
   {
-    id: "prestige-cooper",
-    number: "3",
+    id: "prestige-jonathan",
+    number: "22",
     category: "prestige",
-    name: "Cooper Abbott",
-    imageSrc: "/images/pilotes_prestige/Cooper-kwadrat.jpg",
-  },
-  {
-    id: "prestige-toby",
-    number: "4",
-    category: "prestige",
-    name: "Toby Martyn",
-    imageSrc: "/images/pilotes_prestige/Toby-kwadrat.jpg",
-  },
-  {
-    id: "prestige-jonny",
-    number: "5",
-    category: "prestige",
-    name: "Jonny Walker",
+    name: "Jonathan Walker",
     imageSrc: "/images/pilotes_prestige/Jonny-kwadrat.jpg",
   },
   {
+    id: "prestige-mitchell",
+    number: "12",
+    category: "prestige",
+    name: "Mitchell Brightmore",
+    imageSrc: "/images/pilotes_prestige/Mitch-kwadrat.jpg",
+  },
+  {
     id: "prestige-eddie",
-    number: "6",
+    number: "42",
     category: "prestige",
     name: "Eddie Karlsson",
     imageSrc: "/images/pilotes_prestige/Eddie-kwadrat.jpg",
   },
   {
-    id: "prestige-dominik",
-    number: "7",
+    id: "prestige-toby",
+    number: "212",
     category: "prestige",
-    name: "Dominik Olszowy",
-    imageSrc: "/images/pilotes_prestige/Dominik-kwadrat.jpg",
+    name: "Toby Martyn",
+    imageSrc: "/images/pilotes_prestige/Toby-kwadrat.jpg",
   },
   {
     id: "prestige-tim",
-    number: "8",
+    number: "96",
     category: "prestige",
     name: "Tim Apolle",
     imageSrc: "/images/pilotes_prestige/Tim-kwadrat.jpg",
   },
   {
-    id: "prestige-will",
-    number: "9",
+    id: "prestige-alfredo",
+    number: "89",
     category: "prestige",
-    name: "Will Hoare",
-    imageSrc: "/images/pilotes_prestige/Will-kwadrat.jpg",
+    name: "Alfredo Gomez",
+    imageSrc: "/images/pilotes_prestige/Alfredo-kwadrat.jpg",
   },
   {
-    id: "prestige-harry",
-    number: "10",
+    id: "prestige-dominik",
+    number: "501",
     category: "prestige",
-    name: "Harry Edmondson",
-    imageSrc: "/images/pilotes_prestige/Harry-kwadrat.jpg",
+    name: "Dominik Olszowy",
+    imageSrc: "/images/pilotes_prestige/Dominik-kwadrat.jpg",
   },
   {
-    id: "prestige-ash",
-    number: "11",
+    id: "prestige-ashton",
+    number: "7",
     category: "prestige",
-    name: "Ash Brightmore",
+    name: "Ashton Brightmore",
     imageSrc: "/images/pilotes_prestige/Ash-kwadrat.jpg",
   },
   {
-    id: "prestige-jordi",
-    number: "12",
-    category: "prestige",
-    name: "Jordi Sala",
-    imageSrc: "/images/pilotes_prestige/Jordi-kwadrat.jpg",
-  },
-  {
     id: "prestige-diogo",
-    number: "14",
+    number: "21",
     category: "prestige",
     name: "Diogo Vieira",
     imageSrc: "/images/pilotes_prestige/Diogo-kwadrat.jpg",
   },
   {
+    id: "prestige-harry",
+    number: "16",
+    category: "prestige",
+    name: "Harry Edmondson",
+    imageSrc: "/images/pilotes_prestige/Harry-kwadrat.jpg",
+  },
+  {
     id: "prestige-aleksander",
-    number: "15",
+    number: "83",
     category: "prestige",
     name: "Aleksander Gotkowski",
     imageSrc: "/images/pilotes_prestige/Aleksander-kwadrat.jpg",
-  },
-  {
-    id: "prestige-alfredo",
-    number: "16",
-    category: "prestige",
-    name: "Alfredo Gomez",
-    imageSrc: "/images/pilotes_prestige/Alfredo-kwadrat.jpg",
   },
 
   // Junior
