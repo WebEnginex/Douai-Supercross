@@ -10,7 +10,7 @@ export const ticketsPageLabels = {
   externalNote:
     "Un clic et vous basculez sur la plateforme partenaire pour finaliser votre commande.",
   cta: "Réserver",
-  featuredBadge: "Le plus choisi",
+  featuredBadge: "Meilleure vue",
   priceLabels: {
     normal: "Normal",
     group: "Groupe",
@@ -33,7 +33,7 @@ export const tickets: Ticket[] = [
     id: "ticket-cat-1",
     name: "Catégorie 1",
     description:
-      "Emplacement accessible dans l'Arena. Vivez toute l'ambiance Super Enduro.",
+      "Emplacement privilégié dans l'Arena. La meilleure vue sur le circuit.",
     prices: {
       normal: 57,
       group: 48,
@@ -41,6 +41,8 @@ export const tickets: Ticket[] = [
     },
     purchaseUrl: "https://www.billetterie-partenaire-placeholder.com/categorie-1",
     tier: "category1",
+    featured: true,
+    badge: "Meilleure vue",
   },
   {
     id: "ticket-cat-2",
@@ -59,7 +61,7 @@ export const tickets: Ticket[] = [
     id: "ticket-cat-3",
     name: "Catégorie 3",
     description:
-      "Emplacement privilégié dans l'Arena. La meilleure vue sur le circuit.",
+      "Emplacement accessible dans l'Arena. Vivez toute l'ambiance Super Enduro.",
     prices: {
       normal: 39,
       group: 30,
@@ -67,7 +69,5 @@ export const tickets: Ticket[] = [
     },
     purchaseUrl: "https://www.billetterie-partenaire-placeholder.com/categorie-3",
     tier: "category3",
-    featured: true,
-    badge: "Le plus choisi",
   },
 ];

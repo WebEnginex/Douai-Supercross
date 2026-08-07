@@ -8,16 +8,16 @@ const tierStyles: Record<
   { accent: string; glow: string }
 > = {
   category1: {
-    accent: "from-zinc-300 to-zinc-500",
-    glow: "group-hover:shadow-zinc-400/10",
+    accent: "from-brand-red to-red-700",
+    glow: "group-hover:shadow-brand-red/20",
   },
   category2: {
-    accent: "from-zinc-500 to-zinc-600",
+    accent: "from-zinc-400 to-zinc-600",
     glow: "group-hover:shadow-zinc-500/10",
   },
   category3: {
-    accent: "from-brand-red to-red-700",
-    glow: "group-hover:shadow-brand-red/20",
+    accent: "from-zinc-500 to-zinc-700",
+    glow: "group-hover:shadow-zinc-500/10",
   },
 };
 

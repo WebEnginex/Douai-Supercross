@@ -23,7 +23,7 @@ export const faqItems: FAQItem[] = [
     id: "faq-04",
     question: "Quelle catégorie choisir ?",
     answer:
-      "La catégorie correspond à votre emplacement dans l'Arena. La Catégorie 3 offre la meilleure vue, la 2 un bon équilibre vue/tarif, et la 1 l'accès le plus accessible pour vivre l'ambiance.",
+      "La catégorie correspond à votre emplacement dans l'Arena. La Catégorie 1 offre la meilleure vue, la 2 un bon équilibre vue/tarif, et la 3 l'accès le plus accessible pour vivre l'ambiance.",
   },
   {
     id: "faq-05",
