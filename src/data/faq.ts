@@ -29,7 +29,7 @@ export const faqItems: FAQItem[] = [
     id: "faq-05",
     question: "Y a-t-il un parking sur place ?",
     answer:
-      "Oui, des parkings sont disponibles à proximité de l'Arena. On vous conseille d'arriver un peu avant 17h30 pour profiter tranquillement de l'accueil et des dédicaces.",
+      "Oui, des parkings sont disponibles à proximité de l'Arena.",
   },
   {
     id: "faq-06",

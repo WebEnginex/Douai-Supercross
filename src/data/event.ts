@@ -121,7 +121,7 @@ export const eventInfoCards: EventInfoCard[] = [
     title: "Parking",
     value: "Sur place",
     description:
-      "Parkings à proximité de l'Arena. Arrivez un peu en avance pour profiter des dédicaces.",
+      "Parkings à proximité de l'Arena.",
     icon: "car",
   },
   {
