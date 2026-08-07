@@ -1,6 +1,5 @@
 import { AboutSection, EventInfoSection } from "@/components/sections/AboutSection";
 import { TicketsPreviewSection } from "@/components/sections/TicketsPreviewSection";
-import { RidersPreviewSection } from "@/components/sections/RidersPreviewSection";
 import { CountdownSection } from "@/components/sections/CountdownSection";
 import { GallerySection } from "@/components/sections/GallerySection";
 import { PartnersSection } from "@/components/sections/PartnersSection";
@@ -15,7 +14,6 @@ export default function HomePage() {
       <AboutSection />
       <EventInfoSection />
       <TicketsPreviewSection />
-      <RidersPreviewSection />
       <CountdownSection />
       <GallerySection />
       <PartnersSection />

@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { User } from "lucide-react";
 import type { Rider } from "@/types";
 import { cn } from "@/lib/cn";
 import { useIsMounted } from "@/hooks/useIsMounted";
@@ -9,59 +9,38 @@ import { useIsMounted } from "@/hooks/useIsMounted";
 interface RiderCardProps {
   rider: Rider;
   index?: number;
-  showBio?: boolean;
   className?: string;
 }
 
-export function RiderCard({
-  rider,
-  index = 0,
-  showBio = false,
-  className,
-}: RiderCardProps) {
+export function RiderCard({ rider, index = 0, className }: RiderCardProps) {
   const isMounted = useIsMounted();
 
   return (
     <motion.article
-      initial={isMounted ? { opacity: 0, y: 30 } : false}
+      initial={isMounted ? { opacity: 0, y: 24 } : false}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ delay: index * 0.08, duration: 0.4 }}
-      className={cn(
-        "group bg-surface border border-white/5 rounded-lg overflow-hidden transition-all duration-300 hover:border-brand-red/30 hover:shadow-xl hover:shadow-brand-red/5",
-        className
-      )}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ delay: Math.min(index * 0.04, 0.3), duration: 0.4 }}
+      className={cn("group relative", className)}
     >
-      <div className="relative aspect-[4/5] bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-red/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        <User
-          size={64}
-          className="text-zinc-600 group-hover:text-zinc-500 transition-colors"
-          strokeWidth={1}
+      <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-zinc-900 border border-white/5 transition-all duration-500 group-hover:border-brand-red/40 group-hover:shadow-[0_20px_40px_-20px_rgba(227,6,19,0.45)]">
+        <Image
+          src={rider.imageSrc}
+          alt={`Pilote n°${rider.number}`}
+          fill
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+          className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
         />
-        <span className="absolute bottom-3 left-3 text-xs text-zinc-500 uppercase tracking-widest">
-          {rider.imagePlaceholder}
-        </span>
-      </div>
 
-      <div className="p-5">
-        <h3 className="font-display text-lg font-bold text-white mb-1">
-          {rider.name}
-        </h3>
-        <div className="flex flex-wrap gap-2 mb-3">
-          <span className="text-xs px-2 py-1 bg-white/5 text-zinc-300 rounded-sm">
-            {rider.country}
-          </span>
-          <span className="text-xs px-2 py-1 bg-brand-red/10 text-brand-red rounded-sm">
-            {rider.manufacturer}
-          </span>
-        </div>
-        <p className="text-zinc-400 text-sm">{rider.team}</p>
-        {showBio && (
-          <p className="text-zinc-500 text-sm mt-3 line-clamp-3 leading-relaxed">
-            {rider.biography}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-brand-red/0 via-transparent to-brand-red/0 group-hover:to-brand-red/10 transition-colors duration-500" />
+
+        <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
+          <p className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-none tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.65)]">
+            <span className="text-brand-red">#</span>
+            {rider.number}
           </p>
-        )}
+        </div>
       </div>
     </motion.article>
   );

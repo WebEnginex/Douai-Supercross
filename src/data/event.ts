@@ -55,8 +55,8 @@ export const eventConfig = {
       subtitle: "Tout pour préparer votre soirée",
     },
     ridersPreview: {
-      title: "Pilotes d'élite",
-      subtitle: "Le plateau",
+      title: "Pilotes",
+      subtitle: "Prestige & Junior",
       viewAll: "Voir tous les pilotes",
     },
     countdown: {

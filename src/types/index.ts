@@ -1,11 +1,13 @@
+export type RiderCategory = "prestige" | "junior";
+
 export interface Rider {
   id: string;
+  /** Numéro de course (à confirmer / remplacer) */
+  number: string;
+  category: RiderCategory;
+  /** Utilisé pour l'attribut alt de l'image */
   name: string;
-  country: string;
-  team: string;
-  manufacturer: string;
-  biography: string;
-  imagePlaceholder: string;
+  imageSrc: string;
 }
 
 export interface EventInfoCard {

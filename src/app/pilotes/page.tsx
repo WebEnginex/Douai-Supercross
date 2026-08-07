@@ -5,7 +5,7 @@ import { RidersPageContent } from "../riders/RidersPageContent";
 
 export const metadata: Metadata = createMetadata({
   title: "Pilotes",
-  description: `Découvrez le plateau de pilotes d'élite de ${siteConfig.name}. Recherchez et filtrez par pays et constructeur.`,
+  description: `Découvrez le plateau Prestige et Junior de ${siteConfig.name}.`,
   path: "/pilotes",
 });
 
