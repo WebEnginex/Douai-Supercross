@@ -33,7 +33,7 @@ export const tickets: Ticket[] = [
     id: "ticket-cat-1",
     name: "Catégorie 1",
     description:
-      "Emplacement privilégié dans l'Arena — la meilleure vue sur le circuit.",
+      "Emplacement accessible dans l'Arena — vivez toute l'ambiance Super Enduro.",
     prices: {
       normal: 57,
       group: 48,
@@ -59,7 +59,7 @@ export const tickets: Ticket[] = [
     id: "ticket-cat-3",
     name: "Catégorie 3",
     description:
-      "Vivez toute l'ambiance Super Enduro au meilleur tarif — l'entrée idéale pour découvrir l'événement.",
+      "Emplacement privilégié dans l'Arena — la meilleure vue sur le circuit.",
     prices: {
       normal: 39,
       group: 30,

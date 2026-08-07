@@ -24,7 +24,7 @@ export const partners: Partner[] = [
   {
     id: "partner-24mx",
     name: "24MX",
-    logoSrc: "/images/partners/24MxLogo.webp",
+    logoSrc: "/images/partners/24MxLogo.png",
   },
   {
     id: "partner-acerbis",
