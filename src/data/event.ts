@@ -30,10 +30,10 @@ export const eventConfig = {
       "De l'ouverture des portes à 17h30 jusqu'aux finales à 22h00, le programme enchaîne dédicaces, cérémonie d'ouverture, SuperPole et courses toutes catégories. Une expérience complète, pensée pour les fans comme pour ceux qui découvrent la discipline.",
     ],
     stats: [
-      { value: "6+", label: "Pilotes d'élite" },
-      { value: "4h+", label: "D'action" },
+      { value: "2 classes", label: "Prestige & Junior" },
+      { value: "4h+", label: "De courses" },
       { value: "Arena", label: "Grand Paris" },
-      { value: "1 soirée", label: "Inoubliable" },
+      { value: "17h30", label: "Ouverture" },
     ],
   },
   cta: {

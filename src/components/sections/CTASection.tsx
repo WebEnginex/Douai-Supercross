@@ -11,8 +11,24 @@ export function CTASection() {
 
   return (
     <section className="py-24 md:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-red/20 via-black to-brand-red/10" />
-      <div className="absolute inset-0 bg-[url('/images/hero-poster.svg')] bg-cover bg-center opacity-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-red/25 via-black to-zinc-950" />
+      <div
+        aria-hidden
+        className="absolute inset-0 opacity-[0.07]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgba(255,255,255,0.9) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.9) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-brand-red/20 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 top-1/3 h-64 w-64 rounded-full bg-brand-red/10 blur-3xl"
+      />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
         <motion.div
