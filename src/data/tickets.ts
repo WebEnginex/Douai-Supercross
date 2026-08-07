@@ -4,7 +4,7 @@ export const ticketsPageLabels = {
   title: "Billetterie",
   subtitle: "Choisissez votre emplacement",
   description:
-    "Trois catégories selon votre place dans l'Arena. Tarif Normal, Groupe (dès 10 personnes) ou Enfant (moins de 10 ans) — à vous de jouer.",
+    "Trois catégories selon votre place dans l'Arena. Tarif Normal, Groupe (dès 10 personnes) ou Enfant (moins de 10 ans).",
   disclaimer:
     "La catégorie correspond à votre emplacement dans l'Arena. Paiement sécurisé via notre partenaire billetterie.",
   externalNote:
@@ -33,7 +33,7 @@ export const tickets: Ticket[] = [
     id: "ticket-cat-1",
     name: "Catégorie 1",
     description:
-      "Emplacement accessible dans l'Arena — vivez toute l'ambiance Super Enduro.",
+      "Emplacement accessible dans l'Arena. Vivez toute l'ambiance Super Enduro.",
     prices: {
       normal: 57,
       group: 48,
@@ -46,7 +46,7 @@ export const tickets: Ticket[] = [
     id: "ticket-cat-2",
     name: "Catégorie 2",
     description:
-      "Emplacement intermédiaire — excellent équilibre entre vue et tarif.",
+      "Emplacement intermédiaire. Excellent équilibre entre vue et tarif.",
     prices: {
       normal: 48,
       group: 39,
@@ -59,7 +59,7 @@ export const tickets: Ticket[] = [
     id: "ticket-cat-3",
     name: "Catégorie 3",
     description:
-      "Emplacement privilégié dans l'Arena — la meilleure vue sur le circuit.",
+      "Emplacement privilégié dans l'Arena. La meilleure vue sur le circuit.",
     prices: {
       normal: 39,
       group: 30,

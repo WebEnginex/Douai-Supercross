@@ -49,7 +49,7 @@ export const scheduleItems: ScheduleItem[] = [
     id: "schedule-06",
     time: "20h45",
     title: "Entracte",
-    description: "Pause — restauration, merchandising et ambiance dans l'Arena.",
+    description: "Pause : restauration, merchandising et ambiance dans l'Arena.",
   },
   {
     id: "schedule-07",
@@ -68,7 +68,7 @@ export const scheduleItems: ScheduleItem[] = [
     id: "schedule-09",
     time: "22h00",
     title: "Finales",
-    description: "Les finales Super Enduro — le moment culminant de la soirée.",
+    description: "Les finales Super Enduro, le moment culminant de la soirée.",
     highlight: true,
   },
 ];

@@ -58,7 +58,7 @@ export function TicketCard({ ticket, className }: TicketCardProps) {
             ? "border-brand-red/45 shadow-lg shadow-brand-red/10 hover:border-brand-red/60"
             : "border-white/5 hover:border-white/20"
         )}
-        aria-label={`${cta} — ${ticket.name}`}
+        aria-label={`${cta} ${ticket.name}`}
       >
         <div className={cn("h-1.5 w-full bg-gradient-to-r", styles.accent)} />
 

@@ -35,6 +35,6 @@ export const faqItems: FAQItem[] = [
     id: "faq-06",
     question: "Puis-je venir avec des enfants ?",
     answer:
-      "Oui. Un tarif Enfant (moins de 10 ans) est proposé dans chaque catégorie. C'est une soirée familiale, intense et spectaculaire — idéale pour faire découvrir le Super Enduro.",
+      "Oui. Un tarif Enfant (moins de 10 ans) est proposé dans chaque catégorie. C'est une soirée familiale, intense et spectaculaire, idéale pour faire découvrir le Super Enduro.",
   },
 ];

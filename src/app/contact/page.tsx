@@ -8,7 +8,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = createMetadata({
   title: "Contact",
-  description: `Contactez les organisateurs de ${siteConfig.name}. Arena Grand Paris, Tremblay-en-France — billets, presse, partenariats.`,
+  description: `Contactez les organisateurs de ${siteConfig.name}. Arena Grand Paris, Tremblay-en-France. Billets, presse, partenariats.`,
   path: "/contact",
 });
 
@@ -84,7 +84,7 @@ export default function ContactPage() {
 
             <div className="aspect-video bg-surface border border-white/5 rounded-lg overflow-hidden">
               <iframe
-                title={`${organizerInfo.venueName} — carte`}
+                title={`${organizerInfo.venueName} - carte`}
                 src="https://www.google.com/maps?q=Arena+Grand+Paris,+1+Avenue+de+la+Traversi%C3%A8re,+93290+Tremblay-en-France&output=embed"
                 className="w-full h-full border-0"
                 loading="lazy"

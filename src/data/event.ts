@@ -3,7 +3,7 @@ import type { EventInfoCard } from "@/types";
 export const eventConfig = {
   name: "GP Super Enduro Paris",
   edition: "27 février 2027",
-  /** Ouverture des portes — 17h30 heure de Paris (CET, UTC+1) */
+  /** Ouverture des portes : 17h30 heure de Paris (CET, UTC+1) */
   countdownTargetDate: "2027-02-27T17:30:00+01:00",
   hero: {
     title: "GP SUPER ENDURO PARIS",
@@ -26,7 +26,7 @@ export const eventConfig = {
     title: "À propos de l'événement",
     subtitle: "Le Super Enduro s'installe à Paris",
     paragraphs: [
-      "Le GP Super Enduro Paris réunit le plateau international pour une soirée hors normes à l'Arena Grand Paris. Entre sauts, passages techniques et bagarres de positions, chaque course pousse les pilotes — et le public — dans le rouge.",
+      "Le GP Super Enduro Paris réunit le plateau international pour une soirée hors normes à l'Arena Grand Paris. Entre sauts, passages techniques et bagarres de positions, chaque course pousse les pilotes et le public dans le rouge.",
       "De l'ouverture des portes à 17h30 jusqu'aux finales à 22h00, le programme enchaîne dédicaces, cérémonie d'ouverture, SuperPole et courses toutes catégories. Une expérience complète, pensée pour les fans comme pour ceux qui découvrent la discipline.",
     ],
     stats: [
@@ -79,7 +79,7 @@ export const eventConfig = {
       title: "Restez dans la boucle",
       subtitle: "Infolettre",
       description:
-        "Infos billets, annonces pilotes et actus de la soirée — directement dans votre boîte mail.",
+        "Infos billets, annonces pilotes et actus de la soirée, directement dans votre boîte mail.",
       placeholder: "Adresse e-mail",
       button: "S'inscrire",
     },
@@ -91,7 +91,7 @@ export const eventInfoCards: EventInfoCard[] = [
     id: "date",
     title: "Date",
     value: "27 février 2027",
-    description: "Une soirée unique — ouverture des portes à 17h30.",
+    description: "Une soirée unique. Ouverture des portes à 17h30.",
     icon: "calendar",
   },
   {
@@ -129,7 +129,7 @@ export const eventInfoCards: EventInfoCard[] = [
     title: "Emplacements",
     value: "3 catégories",
     description:
-      "Catégorie 1, 2 ou 3 selon votre place dans l'Arena — tarifs Normal, Groupe et Enfant.",
+      "Catégorie 1, 2 ou 3 selon votre place dans l'Arena. Tarifs Normal, Groupe et Enfant.",
     icon: "star",
   },
   {

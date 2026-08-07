@@ -2,7 +2,7 @@ export const footerLabels = {
   navigation: "Navigation",
   newsletter: "Infolettre",
   newsletterDescription:
-    "Billets, pilotes, actus — recevez les infos clés avant le 27 février.",
+    "Billets, pilotes, actus : recevez les infos clés avant le 27 février.",
   emailPlaceholder: "Adresse e-mail",
   joinButton: "S'inscrire",
   followUs: "Suivez-nous",

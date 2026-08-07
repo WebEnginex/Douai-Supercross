@@ -20,7 +20,7 @@ export const siteConfig = {
   shortName: "GP Super Enduro",
   tagline: "Le Super Enduro indoor débarque à Paris",
   description:
-    "GP Super Enduro Paris — 27 février 2027 à l'Arena Grand Paris. Une soirée de courses indoor avec les meilleurs pilotes du monde.",
+    "GP Super Enduro Paris. 27 février 2027 à l'Arena Grand Paris. Une soirée de courses indoor avec les meilleurs pilotes du monde.",
   url: "https://www.gpsuperenduroparis.com",
   locale: "fr",
   themeColor: "#E30613",
