@@ -2,28 +2,43 @@ import type { Partner } from "@/types";
 
 export const partners: Partner[] = [
   {
-    id: "partner-ffmoto",
+    id: "partner-ffm",
     name: "Fédération Française de Motocyclisme",
-    logoSrc: "/images/partners/FFMOTO_LOGO.png",
+    logoSrc: "/images/partners/FederationFrançaiseMotoLogo.png",
   },
   {
     id: "partner-fim",
     name: "FIM",
-    logoSrc: "/images/partners/FIM_Logo.png",
+    logoSrc: "/images/partners/FIMLogo.webp",
   },
   {
-    id: "partner-hauts-de-france",
-    name: "Région Hauts-de-France",
-    logoSrc: "/images/partners/Logo_Region-hauts-de-France.webp",
+    id: "partner-ile-de-france",
+    name: "Région Île-de-France",
+    logoSrc: "/images/partners/RegionIleDeFranceLogo.webp",
   },
   {
-    id: "partner-nord",
-    name: "Département du Nord",
-    logoSrc: "/images/partners/Logo_Nord-le-Departement.webp",
+    id: "partner-seine-saint-denis",
+    name: "Département de Seine-Saint-Denis",
+    logoSrc: "/images/partners/SeineSaintDenisDepartementLogo.webp",
   },
   {
-    id: "partner-gayant",
-    name: "Gayant Expo",
-    logoSrc: "/images/partners/Logo_Gayant-Expo-Douai.webp",
+    id: "partner-24mx",
+    name: "24MX",
+    logoSrc: "/images/partners/24MxLogo.png",
+  },
+  {
+    id: "partner-acerbis",
+    name: "Acerbis",
+    logoSrc: "/images/partners/AcerbisLogo.webp",
+  },
+  {
+    id: "partner-black-energy",
+    name: "Black Energy",
+    logoSrc: "/images/partners/BlackEnergyLogo.webp",
+  },
+  {
+    id: "partner-diverse",
+    name: "Diverse Extreme Team",
+    logoSrc: "/images/partners/DiverseExtremeTeamLogo.webp",
   },
 ];
