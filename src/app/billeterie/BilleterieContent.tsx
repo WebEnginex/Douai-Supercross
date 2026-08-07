@@ -5,16 +5,13 @@ import { Info } from "lucide-react";
 
 export function BilleterieContent() {
   return (
-    <div className="pt-24 md:pt-28 pb-20 bg-background min-h-screen">
+    <div className="pt-24 md:pt-28 pb-20 bg-background min-h-[100dvh]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title={ticketsPageLabels.title}
           subtitle={ticketsPageLabels.subtitle}
+          description={ticketsPageLabels.description}
         />
-
-        <p className="text-center text-zinc-400 max-w-2xl mx-auto -mt-8 mb-10 leading-relaxed">
-          {ticketsPageLabels.description}
-        </p>
 
         <div className="max-w-3xl mx-auto mb-12 p-4 md:p-5 bg-brand-red/5 border border-brand-red/20 rounded-lg flex gap-3">
           <Info
@@ -33,7 +30,7 @@ export function BilleterieContent() {
           ))}
         </div>
 
-        <p className="text-center text-zinc-500 text-sm mt-12 max-w-xl mx-auto">
+        <p className="text-center text-zinc-400 text-sm mt-12 max-w-xl mx-auto">
           {ticketsPageLabels.externalNote}
         </p>
       </div>

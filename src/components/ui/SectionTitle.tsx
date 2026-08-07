@@ -7,6 +7,7 @@ import { useIsMounted } from "@/hooks/useIsMounted";
 interface SectionTitleProps {
   title: string;
   subtitle?: string;
+  description?: string;
   align?: "left" | "center";
   className?: string;
 }
@@ -14,6 +15,7 @@ interface SectionTitleProps {
 export function SectionTitle({
   title,
   subtitle,
+  description,
   align = "center",
   className,
 }: SectionTitleProps) {
@@ -26,7 +28,7 @@ export function SectionTitle({
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5 }}
       className={cn(
-        "mb-12 md:mb-16",
+        description ? "mb-10 md:mb-12" : "mb-12 md:mb-16",
         align === "center" ? "text-center" : "text-left",
         className
       )}
@@ -45,6 +47,16 @@ export function SectionTitle({
           align === "center" ? "mx-auto" : ""
         )}
       />
+      {description && (
+        <p
+          className={cn(
+            "mt-6 text-zinc-400 max-w-2xl leading-relaxed",
+            align === "center" ? "mx-auto" : ""
+          )}
+        >
+          {description}
+        </p>
+      )}
     </motion.div>
   );
 }

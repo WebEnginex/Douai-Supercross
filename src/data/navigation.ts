@@ -16,11 +16,7 @@ export const footerNavLinks: FooterLink[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-export const legalLinks: FooterLink[] = [
-  { label: "Politique de confidentialité", href: "#privacy" },
-  { label: "Conditions d'utilisation", href: "#terms" },
-  { label: "Politique des cookies", href: "#cookies" },
-];
+export const legalLinks: FooterLink[] = [];
 
 export const socialLinks: SocialLink[] = [
   { id: "instagram", label: "Instagram", href: "#instagram" },

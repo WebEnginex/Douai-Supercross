@@ -53,7 +53,7 @@ export function ScheduleTimeline({ items }: ScheduleTimelineProps) {
             >
               <div className="flex flex-wrap items-center gap-3 mb-3">
                 <span className="inline-flex items-center gap-2 text-brand-red text-sm font-semibold uppercase tracking-widest">
-                  <Clock size={14} />
+                  <Clock size={14} aria-hidden="true" />
                   {item.time}
                 </span>
               </div>

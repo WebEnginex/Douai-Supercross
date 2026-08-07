@@ -11,7 +11,7 @@ export function Hero() {
   const isMounted = useIsMounted();
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative min-h-screen min-h-[100dvh] w-full overflow-hidden">
       <div className="absolute inset-0">
         <video
           autoPlay
@@ -60,6 +60,7 @@ export function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        aria-hidden="true"
       >
         <div className="flex flex-col items-center gap-2">
           <span className="text-zinc-400 text-xs uppercase tracking-widest">

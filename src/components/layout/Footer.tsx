@@ -87,13 +87,18 @@ export function Footer() {
               {footerLabels.newsletterDescription}
             </p>
             <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+              <label htmlFor="footer-newsletter-email" className="sr-only">
+                {footerLabels.emailPlaceholder}
+              </label>
               <input
+                id="footer-newsletter-email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={footerLabels.emailPlaceholder}
-                className="flex-1 bg-surface border border-white/10 rounded-sm px-3 py-2 text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-brand-red/50"
+                className="flex-1 min-w-0 bg-surface border border-white/10 rounded-sm px-3 py-2 text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-brand-red/50"
                 required
+                autoComplete="email"
               />
               <EventButton type="submit" size="sm" variant="primary">
                 {footerLabels.joinButton}
@@ -121,21 +126,23 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-zinc-500 text-sm" suppressHydrationWarning>
+          <p className="text-zinc-400 text-sm" suppressHydrationWarning>
             © {new Date().getFullYear()} {siteConfig.name}. {footerLabels.rightsReserved}
           </p>
-          <ul className="flex flex-wrap gap-6">
-            {legalLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-zinc-500 hover:text-zinc-300 text-sm transition-colors"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {legalLinks.length > 0 && (
+            <ul className="flex flex-wrap gap-6">
+              {legalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-zinc-400 hover:text-zinc-300 text-sm transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </footer>

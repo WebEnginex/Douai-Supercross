@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ServiceWorkerCleanup } from "@/components/ServiceWorkerCleanup";
+import { SkipToContent } from "@/components/SkipToContent";
 import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/data/site";
 
@@ -55,8 +56,9 @@ export default function RootLayout({
         className={`${bebasNeue.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`}
       >
         <ServiceWorkerCleanup />
+        <SkipToContent />
         <Navbar />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

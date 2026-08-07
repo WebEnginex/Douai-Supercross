@@ -5,22 +5,19 @@ import { ExternalLink, Users, Baby } from "lucide-react";
 
 const tierStyles: Record<
   Ticket["tier"],
-  { accent: string; glow: string; label: string }
+  { accent: string; glow: string }
 > = {
   category1: {
     accent: "from-zinc-300 to-zinc-500",
     glow: "group-hover:shadow-zinc-400/10",
-    label: "text-zinc-300",
   },
   category2: {
     accent: "from-zinc-500 to-zinc-600",
     glow: "group-hover:shadow-zinc-500/10",
-    label: "text-zinc-400",
   },
   category3: {
     accent: "from-brand-red to-red-700",
     glow: "group-hover:shadow-brand-red/20",
-    label: "text-brand-red",
   },
 };
 
@@ -68,10 +65,6 @@ export function TicketCard({ ticket, className }: TicketCardProps) {
               {ticket.badge}
             </span>
           )}
-
-          <p className={cn("text-xs uppercase tracking-widest mb-2", styles.label)}>
-            Arena
-          </p>
 
           <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">
             {ticket.name}

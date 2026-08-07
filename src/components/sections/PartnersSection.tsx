@@ -1,5 +1,3 @@
-"use client";
-
 import { eventConfig } from "@/data/event";
 import { partners } from "@/data/partners";
 import { SectionTitle } from "@/components/ui/SectionTitle";

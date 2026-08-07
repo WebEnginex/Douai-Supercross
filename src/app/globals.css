@@ -19,11 +19,13 @@
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    color-scheme: dark;
   }
 
   body {
     overflow-x: hidden;
     min-height: 100vh;
+    min-height: 100dvh;
     background-color: #0a0a0a;
     color: #fafafa;
   }
@@ -31,6 +33,20 @@
   ::selection {
     background-color: #E30613;
     color: white;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
