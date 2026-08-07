@@ -5,6 +5,7 @@ export const footerLabels = {
   emailPlaceholder: "Adresse e-mail",
   joinButton: "S'inscrire",
   followUs: "Suivez-nous",
+  venue: "Lieu",
   rightsReserved: "Tous droits réservés.",
 } as const;
 

@@ -97,8 +97,8 @@ export const eventInfoCards: EventInfoCard[] = [
   {
     id: "venue",
     title: "Lieu",
-    value: "Nom du lieu",
-    description: "Adresse du lieu",
+    value: "Arena Grand Paris",
+    description: "1 Av. Traversière, 93290 Tremblay-en-France",
     icon: "map-pin",
   },
   {

@@ -1,11 +1,15 @@
 import type { ContactCategory } from "@/types";
+import { venueConfig } from "@/data/site";
 
 export const organizerInfo = {
   name: "Nom de l'organisateur",
   email: "E-mail de l'organisateur",
   phone: "Téléphone de l'organisateur",
-  address: "Adresse du lieu",
-  mapPlaceholder: "Carte — emplacement réservé",
+  venueName: venueConfig.name,
+  address: venueConfig.fullAddress,
+  addressLines: venueConfig.displayLines,
+  mapsUrl: venueConfig.mapsUrl,
+  mapsLabel: venueConfig.mapsLabel,
 } as const;
 
 export const contactCategories: ContactCategory[] = [

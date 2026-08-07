@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Instagram, Facebook, Youtube, Twitter } from "lucide-react";
+import { Instagram, Facebook, Youtube, Twitter, MapPin } from "lucide-react";
 import {
   footerNavLinks,
   legalLinks,
   socialLinks,
 } from "@/data/navigation";
-import { siteConfig } from "@/data/site";
+import { siteConfig, venueConfig } from "@/data/site";
 import { footerLabels } from "@/data/ui";
 import { EventButton } from "@/components/ui/EventButton";
 
@@ -36,9 +36,29 @@ export function Footer() {
             <h3 className="font-display text-xl font-bold text-white mb-4">
               {siteConfig.shortName}
             </h3>
-            <p className="text-zinc-400 text-sm leading-relaxed">
+            <p className="text-zinc-400 text-sm leading-relaxed mb-5">
               {siteConfig.footerDescription}
             </p>
+            <div className="flex items-start gap-2.5">
+              <MapPin
+                size={16}
+                className="text-brand-red shrink-0 mt-0.5"
+                aria-hidden="true"
+              />
+              <div>
+                <p className="text-white text-sm font-medium mb-0.5">
+                  {venueConfig.name}
+                </p>
+                <a
+                  href={venueConfig.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-400 hover:text-brand-red text-sm leading-relaxed transition-colors"
+                >
+                  {venueConfig.fullAddress}
+                </a>
+              </div>
+            </div>
           </div>
 
           <div>

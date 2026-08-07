@@ -9,9 +9,9 @@ export const faqItems: FAQItem[] = [
   },
   {
     id: "faq-02",
-    question: "Question — emplacement réservé : Où se situe le lieu ?",
+    question: "Où se déroule l'événement ?",
     answer:
-      "Réponse — emplacement réservé. Remplacez par le nom du lieu, l'adresse et les indications pour les participants.",
+      "Le GP Super Enduro Paris a lieu à l'Arena Grand Paris, 1 Av. Traversière, 93290 Tremblay-en-France.",
   },
   {
     id: "faq-03",

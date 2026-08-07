@@ -8,7 +8,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = createMetadata({
   title: "Contact",
-  description: `Contactez les organisateurs de ${siteConfig.name}. Billets, VIP, presse, partenariats et plus encore.`,
+  description: `Contactez les organisateurs de ${siteConfig.name}. Arena Grand Paris, Tremblay-en-France — billets, presse, partenariats.`,
   path: "/contact",
 });
 
@@ -67,14 +67,30 @@ export default function ContactPage() {
                 <h3 className="text-white font-semibold mb-1">
                   {contactPageLabels.venue}
                 </h3>
+                <p className="text-white font-medium mb-1">
+                  {organizerInfo.venueName}
+                </p>
                 <p className="text-zinc-400">{organizerInfo.address}</p>
+                <a
+                  href={organizerInfo.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 text-sm text-brand-red hover:text-brand-red-dark transition-colors"
+                >
+                  {organizerInfo.mapsLabel}
+                </a>
               </div>
             </div>
 
-            <div className="aspect-video bg-surface border border-white/5 rounded-lg flex items-center justify-center">
-              <span className="text-zinc-500 uppercase tracking-widest text-sm">
-                {organizerInfo.mapPlaceholder}
-              </span>
+            <div className="aspect-video bg-surface border border-white/5 rounded-lg overflow-hidden">
+              <iframe
+                title={`${organizerInfo.venueName} — carte`}
+                src="https://www.google.com/maps?q=Arena+Grand+Paris,+1+Avenue+de+la+Traversi%C3%A8re,+93290+Tremblay-en-France&output=embed"
+                className="w-full h-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
           </div>
 
