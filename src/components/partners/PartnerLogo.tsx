@@ -1,28 +1,34 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useIsMounted } from "@/hooks/useIsMounted";
 
 interface PartnerLogoProps {
   name: string;
+  logoSrc: string;
   index: number;
 }
 
-export function PartnerLogo({ name, index }: PartnerLogoProps) {
+export function PartnerLogo({ name, logoSrc, index }: PartnerLogoProps) {
   const isMounted = useIsMounted();
 
   return (
     <motion.div
-      initial={isMounted ? { opacity: 0, scale: 0.9 } : false}
+      initial={isMounted ? { opacity: 0, scale: 0.95 } : false}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05 }}
-      whileHover={{ scale: 1.05, y: -4 }}
-      className="flex items-center justify-center h-24 md:h-28 bg-surface border border-white/5 rounded-lg p-6 transition-colors hover:border-brand-red/30 hover:bg-surface-light cursor-default"
+      className="flex items-center justify-center h-28 md:h-32 bg-white/[0.04] border border-white/5 rounded-lg px-6 py-5 transition-colors hover:border-white/15 hover:bg-white/[0.07]"
     >
-      <span className="text-zinc-500 text-sm font-medium uppercase tracking-widest text-center">
-        {name}
-      </span>
+      <Image
+        src={logoSrc}
+        alt={name}
+        width={220}
+        height={110}
+        className="max-h-16 md:max-h-20 w-auto max-w-full object-contain"
+        sizes="(max-width: 768px) 40vw, 200px"
+      />
     </motion.div>
   );
 }

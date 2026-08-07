@@ -19,6 +19,7 @@ export interface EventInfoCard {
 export interface Partner {
   id: string;
   name: string;
+  logoSrc: string;
 }
 
 export interface FAQItem {
