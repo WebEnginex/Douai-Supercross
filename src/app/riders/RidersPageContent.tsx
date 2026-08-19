@@ -3,9 +3,11 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { getRidersByCategory, riderCategories, ridersPageLabels } from "@/data/riders";
+import { pageMedia } from "@/data/pageMedia";
 import type { RiderCategory } from "@/types";
 import { RiderCard } from "@/components/riders/RiderCard";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { PageBanner } from "@/components/ui/PageBanner";
 import { cn } from "@/lib/cn";
 import { useIsMounted } from "@/hooks/useIsMounted";
 
@@ -22,23 +24,10 @@ export function RidersPageContent() {
   const gridRiders = visibleRiders.slice(3);
 
   return (
-    <div className="relative pt-24 md:pt-28 pb-16 sm:pb-20 bg-background min-h-[100dvh] overflow-hidden">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-[36rem] sm:h-[42rem] bg-[radial-gradient(ellipse_at_top,rgba(227,6,19,0.12),transparent_55%)]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.035]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(255,255,255,0.9) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.9) 1px, transparent 1px)",
-          backgroundSize: "72px 72px",
-          maskImage: "linear-gradient(to bottom, black 0%, transparent 70%)",
-        }}
-      />
+    <div className="bg-background min-h-[100dvh]">
+      <PageBanner {...pageMedia.pilotes} />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative pt-10 md:pt-12 pb-16 sm:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title={ridersPageLabels.title}
           subtitle={ridersPageLabels.subtitle}
@@ -93,7 +82,6 @@ export function RidersPageContent() {
               transition={{ duration: 0.35 }}
               className="space-y-2 sm:space-y-2.5 md:space-y-3"
             >
-              {/* Starting three — scroll on narrow phones, row from sm */}
               <div className="-mx-4 px-4 sm:mx-0 sm:px-0">
                 <div
                   className={cn(
@@ -115,7 +103,6 @@ export function RidersPageContent() {
                 </div>
               </div>
 
-              {/* Rest of the field */}
               {gridRiders.length > 0 && (
                 <div className="group/grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-2.5 md:gap-3">
                   {gridRiders.map((rider, index) => (

@@ -33,6 +33,7 @@ export interface FAQItem {
 export interface GalleryImage {
   id: string;
   alt: string;
+  src: string;
   aspectRatio: "square" | "landscape" | "portrait";
 }
 

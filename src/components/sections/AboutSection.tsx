@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Calendar,
@@ -36,39 +37,82 @@ export function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle title={about.title} subtitle={about.subtitle} />
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-start">
           <motion.div
-            initial={isMounted ? { opacity: 0, x: -30 } : false}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={isMounted ? { opacity: 0, y: 20 } : false}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="flex flex-col gap-5 sm:gap-6"
           >
-            {about.paragraphs.map((paragraph, i) => (
-              <p key={i} className="text-zinc-400 leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
+            <div className="space-y-5 sm:space-y-6">
+              {about.paragraphs.map((paragraph, i) => (
+                <p
+                  key={i}
+                  className="text-zinc-400 leading-relaxed text-sm sm:text-base md:text-[1.05rem] md:leading-7"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+
+            <div className="relative w-full overflow-hidden rounded-sm bg-surface ring-1 ring-white/5 aspect-[16/11] sm:aspect-[16/10]">
+              <Image
+                src={about.image.src}
+                alt={about.image.alt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
+              />
+            </div>
           </motion.div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {about.stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={isMounted ? { opacity: 0, y: 20 } : false}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <SurfaceCard className="text-center">
-                  <p className="font-display text-2xl md:text-3xl font-bold text-brand-red mb-1">
-                    {stat.value}
-                  </p>
-                  <p className="text-zinc-400 text-sm uppercase tracking-widest">
-                    {stat.label}
-                  </p>
-                </SurfaceCard>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            {about.stats.map((stat, index) => {
+              const details =
+                "details" in stat && Array.isArray(stat.details)
+                  ? stat.details
+                  : null;
+              const isWide = Boolean(details) || stat.value.includes("→");
+
+              return (
+                <motion.div
+                  key={stat.label}
+                  initial={isMounted ? { opacity: 0, y: 20 } : false}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08 }}
+                  className={isWide ? "sm:col-span-2" : undefined}
+                >
+                  <SurfaceCard className="text-center h-full flex flex-col justify-center p-4 sm:p-6 md:p-8">
+                    <p
+                      className={
+                        isWide
+                          ? "font-display text-xl sm:text-2xl md:text-3xl font-bold text-brand-red mb-2 leading-tight"
+                          : "font-display text-2xl md:text-3xl font-bold text-brand-red mb-1"
+                      }
+                    >
+                      {stat.value}
+                    </p>
+                    {details ? (
+                      <ul className="mt-1 space-y-1.5 sm:space-y-2">
+                        {details.map((detail) => (
+                          <li
+                            key={detail}
+                            className="text-zinc-400 text-xs sm:text-sm leading-snug px-1"
+                          >
+                            {detail}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-zinc-400 text-xs sm:text-sm uppercase tracking-widest">
+                        {stat.label}
+                      </p>
+                    )}
+                  </SurfaceCard>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

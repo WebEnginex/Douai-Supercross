@@ -1,7 +1,7 @@
 import type { EventInfoCard } from "@/types";
 
 export const eventConfig = {
-  name: "GP Super Enduro Paris",
+  name: "GP SuperEnduro Paris",
   edition: "27 février 2027",
   /** Ouverture des portes : 17h30 heure de Paris (CET, UTC+1) */
   countdownTargetDate: "2027-02-27T17:30:00+01:00",
@@ -26,14 +26,26 @@ export const eventConfig = {
     title: "À propos de l'événement",
     subtitle: "Le Super Enduro s'installe à Paris",
     paragraphs: [
-      "Le GP Super Enduro Paris réunit le plateau international pour une soirée hors normes à l'Arena Grand Paris. Entre sauts, passages techniques et bagarres de positions, chaque course pousse les pilotes et le public dans le rouge.",
+      "Le GP SuperEnduro Paris réunit le plateau international pour une soirée hors normes à l'Arena Grand Paris. Entre sauts, passages techniques et bagarres de positions, chaque course pousse les pilotes et le public dans le rouge.",
       "De l'ouverture des portes à 17h30 jusqu'aux finales à 22h00, le programme enchaîne dédicaces, cérémonie d'ouverture, SuperPole et courses toutes catégories. Une expérience complète, pensée pour les fans comme pour ceux qui découvrent la discipline.",
     ],
+    image: {
+      src: "/images/pages/action-02.webp",
+      alt: "Ambiance course Super Enduro indoor",
+    },
     stats: [
-      { value: "2 classes", label: "Prestige & Junior" },
+      {
+        value: "3 catégories",
+        label: "Catégories",
+        details: [
+          "SuperEnduro Prestige",
+          "SuperEnduro Junior",
+          "SuperEnduro 125cc - de 18 ans",
+        ],
+      },
       { value: "4h+", label: "De courses" },
       { value: "Arena", label: "Grand Paris" },
-      { value: "17h30", label: "Ouverture" },
+      { value: "17h30 → 22h30", label: "Horaires" },
     ],
   },
   cta: {
@@ -65,7 +77,7 @@ export const eventConfig = {
     },
     gallery: {
       title: "Galerie",
-      subtitle: "L'ambiance Super Enduro",
+      subtitle: "L'ambiance GP SuperEnduro",
     },
     partners: {
       title: "Nos partenaires",

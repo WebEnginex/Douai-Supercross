@@ -1,9 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { SkipToContent } from "@/components/SkipToContent";
+import { SiteChrome } from "@/components/layout/SiteChrome";
 import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/data/site";
 
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
     "motorsport",
     "Paris",
     "course indoor",
-    "GP Super Enduro",
+    "GP SuperEnduro",
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
@@ -55,9 +54,7 @@ export default function RootLayout({
         className={`${bebasNeue.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`}
       >
         <SkipToContent />
-        <Navbar />
-        <main id="main-content">{children}</main>
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

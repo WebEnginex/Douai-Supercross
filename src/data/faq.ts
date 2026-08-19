@@ -5,7 +5,7 @@ export const faqItems: FAQItem[] = [
     id: "faq-01",
     question: "Quand a lieu l'événement ?",
     answer:
-      "Le GP Super Enduro Paris se déroule le samedi 27 février 2027. Ouverture des portes à 17h30, finales à 22h00. Consultez la page Programme pour le déroulé complet.",
+      "Le GP SuperEnduro Paris se déroule le samedi 27 février 2027. Ouverture des portes à 17h30, finales à 22h00. Consultez la page Programme pour le déroulé complet.",
   },
   {
     id: "faq-02",

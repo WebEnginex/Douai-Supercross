@@ -34,7 +34,7 @@ export function SectionTitle({
       )}
     >
       {subtitle && (
-        <p className="text-brand-red text-sm md:text-base font-semibold tracking-[0.2em] uppercase mb-3">
+        <p className="text-brand-red text-xs sm:text-sm md:text-base font-semibold tracking-[0.12em] sm:tracking-[0.2em] uppercase mb-3 px-2 break-words">
           {subtitle}
         </p>
       )}

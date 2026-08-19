@@ -1,0 +1,84 @@
+import { getSupabaseAdmin } from "@/lib/db/client";
+
+export type ContactMessageRow = {
+  id: string;
+  name: string;
+  email: string;
+  subject: string;
+  category: string;
+  message: string;
+  status: string;
+  createdAt: string;
+};
+
+const ALLOWED_STATUSES = new Set(["new", "read", "replied", "archived"]);
+
+function isMissingRelationError(error: { code?: string } | null | undefined) {
+  return error?.code === "PGRST205" || error?.code === "42P01";
+}
+
+export async function getContactMessages(): Promise<{
+  messages: ContactMessageRow[];
+  schemaMissing: boolean;
+}> {
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase
+    .from("contact_messages")
+    .select("id, name, email, subject, category, message, status, created_at")
+    .order("created_at", { ascending: false })
+    .limit(100);
+
+  if (error) {
+    if (isMissingRelationError(error)) {
+      return { messages: [], schemaMissing: true };
+    }
+    throw new Error(error.message);
+  }
+
+  return {
+    schemaMissing: false,
+    messages: (data ?? []).map((row) => ({
+      id: row.id as string,
+      name: row.name as string,
+      email: row.email as string,
+      subject: row.subject as string,
+      category: row.category as string,
+      message: row.message as string,
+      status: row.status as string,
+      createdAt: row.created_at as string,
+    })),
+  };
+}
+
+export async function updateContactMessagesStatus(
+  ids: string[],
+  status: string
+) {
+  if (!ALLOWED_STATUSES.has(status)) {
+    throw new Error("Statut invalide.");
+  }
+  if (ids.length === 0) return;
+
+  const supabase = getSupabaseAdmin();
+  const { error } = await supabase
+    .from("contact_messages")
+    .update({
+      status,
+      updated_at: new Date().toISOString(),
+    })
+    .in("id", ids);
+
+  if (error) throw new Error(error.message);
+}
+
+export async function deleteContactMessages(ids: string[]) {
+  if (ids.length === 0) return;
+
+  const supabase = getSupabaseAdmin();
+  const { error } = await supabase
+    .from("contact_messages")
+    .delete()
+    .in("id", ids);
+
+  if (error) throw new Error(error.message);
+}

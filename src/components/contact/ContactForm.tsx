@@ -18,6 +18,8 @@ const initialForm: ContactFormData = {
 export function ContactForm() {
   const [form, setForm] = useState<ContactFormData>(initialForm);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
   const { form: labels } = contactPageLabels;
   const isMounted = useIsMounted();
 
@@ -30,12 +32,32 @@ export function ContactForm() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Contact form submitted:", form);
-    setSubmitted(true);
-    setForm(initialForm);
-    setTimeout(() => setSubmitted(false), 4000);
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        setError(data.error || "Envoi impossible.");
+        return;
+      }
+
+      setSubmitted(true);
+      setForm(initialForm);
+      setTimeout(() => setSubmitted(false), 4000);
+    } catch {
+      setError("Erreur réseau. Réessaie dans un instant.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputClasses =
@@ -133,9 +155,20 @@ export function ContactForm() {
         />
       </div>
 
-      <EventButton type="submit" size="lg" className="w-full sm:w-auto">
-        {labels.submit}
+      <EventButton
+        type="submit"
+        size="lg"
+        className="w-full sm:w-auto"
+        disabled={loading}
+      >
+        {loading ? "Envoi…" : labels.submit}
       </EventButton>
+
+      {error ? (
+        <p className="text-brand-red text-sm" role="alert">
+          {error}
+        </p>
+      ) : null}
 
       {submitted && (
         <motion.p

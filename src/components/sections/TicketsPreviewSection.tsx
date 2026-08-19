@@ -12,9 +12,17 @@ export function TicketsPreviewSection() {
           subtitle={ticketsPreviewLabels.subtitle}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 md:items-stretch max-w-5xl mx-auto md:pt-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 lg:items-stretch max-w-5xl mx-auto">
           {tickets.map((ticket) => (
-            <TicketCard key={ticket.id} ticket={ticket} />
+            <TicketCard
+              key={ticket.id}
+              ticket={ticket}
+              className={
+                ticket.tier === "category3"
+                  ? "sm:col-span-2 sm:max-w-md sm:mx-auto lg:col-span-1 lg:max-w-none"
+                  : undefined
+              }
+            />
           ))}
         </div>
 

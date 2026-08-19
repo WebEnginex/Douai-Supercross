@@ -3,7 +3,9 @@ import { Mail, MapPin, User } from "lucide-react";
 import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/data/site";
 import { organizerInfo, contactPageLabels } from "@/data/contact";
+import { pageMedia } from "@/data/pageMedia";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+import { PageBanner } from "@/components/ui/PageBanner";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = createMetadata({
@@ -14,8 +16,10 @@ export const metadata: Metadata = createMetadata({
 
 export default function ContactPage() {
   return (
-    <div className="pt-24 md:pt-28 pb-20 bg-background min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-background min-h-screen">
+      <PageBanner {...pageMedia.contact} />
+
+      <div className="pt-10 md:pt-12 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title={contactPageLabels.title}
           subtitle={contactPageLabels.subtitle}

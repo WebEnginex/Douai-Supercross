@@ -13,7 +13,8 @@ export const scheduleItems: ScheduleItem[] = [
     id: "schedule-01",
     time: "17h30",
     title: "Ouverture des portes",
-    description: "Accueil du public et accès aux tribunes.",
+    description:
+      "Accueil du public, accès au merchandising officiel et aux tribunes.",
   },
   {
     id: "schedule-02",

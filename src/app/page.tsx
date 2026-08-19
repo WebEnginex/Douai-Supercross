@@ -1,7 +1,6 @@
 import { AboutSection, EventInfoSection } from "@/components/sections/AboutSection";
 import { TicketsPreviewSection } from "@/components/sections/TicketsPreviewSection";
 import { CountdownSection } from "@/components/sections/CountdownSection";
-import { GallerySection } from "@/components/sections/GallerySection";
 import { PartnersSection } from "@/components/sections/PartnersSection";
 import { FAQSection, NewsletterSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
@@ -15,7 +14,6 @@ export default function HomePage() {
       <EventInfoSection />
       <TicketsPreviewSection />
       <CountdownSection />
-      <GallerySection />
       <PartnersSection />
       <FAQSection />
       <NewsletterSection />

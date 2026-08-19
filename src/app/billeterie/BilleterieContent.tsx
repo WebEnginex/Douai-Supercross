@@ -1,36 +1,43 @@
 import { TicketCard } from "@/components/tickets/TicketCard";
 import { tickets, ticketsPageLabels } from "@/data/tickets";
+import { pageMedia } from "@/data/pageMedia";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { Info } from "lucide-react";
+import { PageBanner } from "@/components/ui/PageBanner";
 
 export function BilleterieContent() {
   return (
-    <div className="pt-24 md:pt-28 pb-20 bg-background min-h-[100dvh]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-background min-h-[100dvh]">
+      <PageBanner {...pageMedia.billeterie} />
+
+      <div className="pt-10 md:pt-12 pb-16 sm:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title={ticketsPageLabels.title}
           subtitle={ticketsPageLabels.subtitle}
           description={ticketsPageLabels.description}
         />
 
-        <div className="max-w-2xl mx-auto mb-12 flex gap-3 text-zinc-400 text-sm leading-relaxed">
-          <Info
-            size={18}
-            className="text-zinc-500 shrink-0 mt-0.5"
-            aria-hidden="true"
-          />
-          <p>{ticketsPageLabels.disclaimer}</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 md:items-stretch max-w-5xl mx-auto md:pt-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 lg:items-stretch max-w-5xl mx-auto">
           {tickets.map((ticket) => (
-            <TicketCard key={ticket.id} ticket={ticket} />
+            <TicketCard
+              key={ticket.id}
+              ticket={ticket}
+              className={
+                ticket.tier === "category3"
+                  ? "sm:col-span-2 sm:max-w-md sm:mx-auto lg:col-span-1 lg:max-w-none"
+                  : undefined
+              }
+            />
           ))}
         </div>
 
-        <p className="text-center text-zinc-500 text-sm mt-12 max-w-xl mx-auto">
-          {ticketsPageLabels.externalNote}
-        </p>
+        <div className="mt-10 md:mt-12 max-w-2xl mx-auto text-center space-y-4">
+          <p className="text-xs sm:text-sm text-zinc-500 tracking-wide">
+            {ticketsPageLabels.trustItems.join(" · ")}
+          </p>
+          <p className="text-zinc-500 text-sm leading-relaxed px-2">
+            {ticketsPageLabels.externalNote}
+          </p>
+        </div>
       </div>
     </div>
   );

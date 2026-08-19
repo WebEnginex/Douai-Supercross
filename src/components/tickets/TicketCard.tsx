@@ -1,7 +1,9 @@
+"use client";
+
 import type { Ticket } from "@/types";
 import { ticketsPageLabels } from "@/data/tickets";
 import { cn } from "@/lib/cn";
-import { ExternalLink, Users, Baby } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 function formatPrice(amount: number): string {
   return `${amount}\u00a0€`;
@@ -16,109 +18,116 @@ export function TicketCard({ ticket, className }: TicketCardProps) {
   const { priceLabels, priceNotes, cta } = ticketsPageLabels;
   const isFeatured = Boolean(ticket.featured);
 
+  const secondaryPrices = [
+    {
+      key: "group" as const,
+      label: priceLabels.group,
+      note: priceNotes.group,
+      amount: ticket.prices.group,
+    },
+    {
+      key: "child" as const,
+      label: priceLabels.child,
+      note: priceNotes.child,
+      amount: ticket.prices.child,
+    },
+  ];
+
+  const trackClick = () => {
+    void fetch("/api/track/ticket", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ticketId: ticket.id,
+        ticketName: ticket.name,
+      }),
+      keepalive: true,
+    }).catch(() => undefined);
+  };
+
   return (
     <article
       className={cn(
-        "group relative flex flex-col h-full",
-        isFeatured && "md:z-10 md:scale-[1.03]",
+        "relative flex flex-col h-full rounded-lg overflow-hidden border bg-surface",
+        isFeatured ? "border-brand-red/40" : "border-white/8",
         className
       )}
     >
-      <a
-        href={ticket.purchaseUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={cn(
-          "flex flex-col h-full rounded-xl overflow-hidden transition-all duration-300",
-          "hover:-translate-y-1",
-          isFeatured
-            ? "bg-surface border border-brand-red/50 shadow-[0_0_0_1px_rgba(227,6,19,0.15),0_20px_40px_-20px_rgba(227,6,19,0.35)] hover:border-brand-red/70"
-            : "bg-surface/80 border border-white/8 hover:border-white/20 hover:bg-surface"
-        )}
-        aria-label={`${cta} ${ticket.name}`}
-      >
-        <div
-          className={cn(
-            "h-1 w-full",
-            isFeatured ? "bg-brand-red" : "bg-white/10"
-          )}
-        />
+      <div
+        className={cn("h-0.5 w-full", isFeatured ? "bg-brand-red" : "bg-white/10")}
+        aria-hidden="true"
+      />
 
-        <div className="flex flex-col flex-1 p-6 md:p-7">
-          <div className="min-h-[1.75rem] mb-4">
-            {ticket.badge ? (
-              <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.18em] px-2.5 py-1 bg-brand-red text-white rounded-sm">
-                {ticket.badge}
-              </span>
-            ) : null}
-          </div>
-
-          <h3 className="font-display text-2xl md:text-[1.75rem] font-bold text-white tracking-tight mb-2">
-            {ticket.name}
-          </h3>
-
-          <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-            {ticket.description}
+      <div className="flex flex-col flex-1 p-5 sm:p-6">
+        {ticket.badge ? (
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-red mb-3">
+            {ticket.badge}
           </p>
+        ) : (
+          <div className="hidden md:block h-[1.125rem] mb-3" aria-hidden="true" />
+        )}
 
-          <div className="mb-6">
-            <p className="text-xs uppercase tracking-widest text-zinc-500 mb-1">
+        <h3 className="font-display text-2xl sm:text-[1.65rem] font-bold text-white tracking-tight">
+          {ticket.name}
+        </h3>
+
+        <p className="mt-2 text-zinc-400 text-sm leading-relaxed">
+          {ticket.description}
+        </p>
+
+        <div className="mt-6 mb-5">
+          <div className="flex items-end justify-between gap-3 border-b border-white/8 pb-4">
+            <span className="text-xs uppercase tracking-widest text-zinc-500">
               {priceLabels.normal}
-            </p>
-            <p
+            </span>
+            <span
               className={cn(
-                "font-display text-4xl font-bold tabular-nums leading-none",
+                "font-display text-3xl sm:text-4xl font-bold tabular-nums leading-none",
                 isFeatured ? "text-brand-red" : "text-white"
               )}
             >
               {formatPrice(ticket.prices.normal)}
-            </p>
+            </span>
           </div>
 
-          <ul className="space-y-3 mb-8 flex-1 border-t border-white/5 pt-5">
-            <li className="flex items-start justify-between gap-3">
-              <span className="text-sm text-zinc-400">
-                <span className="inline-flex items-center gap-1.5 text-zinc-300">
-                  <Users size={14} className="text-zinc-500" aria-hidden="true" />
-                  {priceLabels.group}
+          <ul className="mt-1">
+            {secondaryPrices.map((row) => (
+              <li
+                key={row.key}
+                className="flex items-baseline justify-between gap-3 py-2.5 border-b border-white/[0.04] last:border-0"
+              >
+                <span className="min-w-0">
+                  <span className="block text-sm text-zinc-300">{row.label}</span>
+                  <span className="block text-xs text-zinc-500 mt-0.5">
+                    {row.note}
+                  </span>
                 </span>
-                <span className="block text-xs text-zinc-500 mt-0.5 pl-5">
-                  {priceNotes.group}
+                <span className="font-display text-lg font-semibold text-white tabular-nums shrink-0">
+                  {formatPrice(row.amount)}
                 </span>
-              </span>
-              <span className="font-display text-lg font-semibold text-white shrink-0 tabular-nums">
-                {formatPrice(ticket.prices.group)}
-              </span>
-            </li>
-            <li className="flex items-start justify-between gap-3">
-              <span className="text-sm text-zinc-400">
-                <span className="inline-flex items-center gap-1.5 text-zinc-300">
-                  <Baby size={14} className="text-zinc-500" aria-hidden="true" />
-                  {priceLabels.child}
-                </span>
-                <span className="block text-xs text-zinc-500 mt-0.5 pl-5">
-                  {priceNotes.child}
-                </span>
-              </span>
-              <span className="font-display text-lg font-semibold text-white shrink-0 tabular-nums">
-                {formatPrice(ticket.prices.child)}
-              </span>
-            </li>
+              </li>
+            ))}
           </ul>
-
-          <span
-            className={cn(
-              "inline-flex items-center justify-center gap-2 w-full py-3.5 px-4 font-semibold text-sm uppercase tracking-widest rounded-sm transition-colors",
-              isFeatured
-                ? "bg-brand-red text-white group-hover:bg-brand-red-dark"
-                : "bg-transparent text-white border border-white/20 group-hover:border-white/40 group-hover:bg-white/5"
-            )}
-          >
-            {cta}
-            <ExternalLink size={15} aria-hidden="true" />
-          </span>
         </div>
-      </a>
+
+        <a
+          href={ticket.purchaseUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={trackClick}
+          className={cn(
+            "mt-auto inline-flex items-center justify-center gap-2 w-full py-3 px-4 font-semibold text-sm uppercase tracking-widest rounded-sm transition-colors",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+            isFeatured
+              ? "bg-brand-red text-white hover:bg-brand-red-dark"
+              : "border border-white/15 text-white hover:border-white/30 hover:bg-white/[0.04]"
+          )}
+          aria-label={`${cta} ${ticket.name}`}
+        >
+          {cta}
+          <ExternalLink size={14} aria-hidden="true" />
+        </a>
+      </div>
     </article>
   );
 }

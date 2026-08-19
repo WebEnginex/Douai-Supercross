@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -9,11 +10,13 @@ import { navLinks } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
 import { navbarLabels } from "@/data/ui";
 import { useNavbarScroll } from "@/hooks/useNavbarScroll";
+import { useIsAdminSession } from "@/hooks/useIsAdminSession";
 import { cn } from "@/lib/cn";
 
 export function Navbar() {
   const pathname = usePathname();
   const isScrolled = useNavbarScroll();
+  const isAdmin = useIsAdminSession();
   const [isOpen, setIsOpen] = useState(false);
   const isHomePage = pathname === "/";
   const showSolidBackground = !isHomePage || isScrolled;
@@ -51,21 +54,42 @@ export function Navbar() {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         aria-label={navbarLabels.mainNavigation}
       >
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <Link
-            href="/"
-            className="font-display text-lg md:text-xl font-bold text-white tracking-wider hover:text-brand-red transition-colors"
-          >
-            {siteConfig.shortName}
-          </Link>
+        <div className="flex items-center justify-between gap-3 sm:gap-4 h-16 md:h-20">
+          <div className="flex items-center gap-2 sm:gap-2.5 lg:gap-3 xl:gap-4 min-w-0 flex-1 lg:flex-none">
+            <Link
+              href="/"
+              className="relative flex items-center min-w-0 transition-opacity hover:opacity-90"
+              aria-label={siteConfig.name}
+            >
+              <Image
+                src="/images/logo/logo_SuperEnduro.png"
+                alt={siteConfig.shortName}
+                width={240}
+                height={72}
+                className="h-7 w-auto max-w-[118px] sm:h-8 sm:max-w-[148px] lg:h-10 lg:max-w-[200px] xl:h-11 xl:max-w-[230px] object-contain"
+                priority
+              />
+            </Link>
+            <span
+              className="h-5 sm:h-6 lg:h-8 w-px bg-white/20 shrink-0"
+              aria-hidden="true"
+            />
+            <Image
+              src="/images/partners/FIMLogo.webp"
+              alt="FIM"
+              width={120}
+              height={60}
+              className="h-6 w-auto max-w-[36px] sm:h-7 sm:max-w-[44px] lg:h-9 lg:max-w-[60px] xl:h-10 xl:max-w-[68px] object-contain opacity-95 shrink-0"
+            />
+          </div>
 
-          <ul className="hidden md:flex items-center gap-6 lg:gap-8">
+          <ul className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8 shrink-0">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   className={cn(
-                    "text-sm font-medium uppercase tracking-widest transition-colors relative group",
+                    "text-sm font-medium uppercase tracking-widest transition-colors relative group whitespace-nowrap",
                     link.highlight
                       ? "px-4 py-2 bg-brand-red text-white font-semibold rounded-sm hover:bg-brand-red-dark shadow-lg shadow-brand-red/20"
                       : "text-white/80 hover:text-white"
@@ -78,11 +102,21 @@ export function Navbar() {
                 </Link>
               </li>
             ))}
+            {isAdmin ? (
+              <li>
+                <Link
+                  href="/admin"
+                  className="text-sm font-medium uppercase tracking-widest text-brand-red hover:text-white transition-colors whitespace-nowrap"
+                >
+                  Admin
+                </Link>
+              </li>
+            ) : null}
           </ul>
 
           <button
             type="button"
-            className="md:hidden p-2 text-white"
+            className="lg:hidden p-2 -mr-1 text-white shrink-0"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? navbarLabels.closeMenu : navbarLabels.openMenu}
             aria-expanded={isOpen}
@@ -100,7 +134,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black/95 backdrop-blur-xl border-b border-white/5 overflow-hidden"
+            className="lg:hidden bg-black/95 backdrop-blur-xl border-b border-white/5 overflow-hidden"
           >
             <ul className="px-4 py-4 space-y-1">
               {navLinks.map((link) => (
@@ -119,6 +153,17 @@ export function Navbar() {
                   </Link>
                 </li>
               ))}
+              {isAdmin ? (
+                <li>
+                  <Link
+                    href="/admin"
+                    onClick={() => setIsOpen(false)}
+                    className="block py-3 px-4 rounded-sm uppercase tracking-widest text-sm font-medium text-brand-red hover:bg-white/5"
+                  >
+                    Admin
+                  </Link>
+                </li>
+              ) : null}
             </ul>
           </motion.div>
         )}

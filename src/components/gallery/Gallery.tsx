@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
 import type { GalleryImage } from "@/types";
@@ -57,16 +58,17 @@ export function Gallery({ images }: GalleryProps) {
             )}
             aria-label={`${galleryLabels.viewImage} ${image.alt}`}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 via-zinc-900 to-black" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-zinc-600 text-xs uppercase tracking-widest">
-                {image.alt}
-              </span>
-            </div>
-            <div className="absolute inset-0 bg-brand-red/0 group-hover:bg-brand-red/10 transition-colors flex items-center justify-center">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors flex items-center justify-center">
               <ZoomIn
-                size={32}
-                className="text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                size={28}
+                className="text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow"
               />
             </div>
           </motion.button>
@@ -91,16 +93,21 @@ export function Gallery({ images }: GalleryProps) {
               <X size={28} />
             </button>
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.92, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
+              exit={{ scale: 0.92, opacity: 0 }}
               transition={{ type: "spring", damping: 25 }}
-              className="relative max-w-4xl w-full aspect-video bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-lg border border-white/10 flex items-center justify-center"
+              className="relative w-full max-w-5xl aspect-video rounded-lg overflow-hidden border border-white/10"
               onClick={(e) => e.stopPropagation()}
             >
-              <span className="text-zinc-500 uppercase tracking-widest">
-                {selected.alt}
-              </span>
+              <Image
+                src={selected.src}
+                alt={selected.alt}
+                fill
+                sizes="100vw"
+                className="object-cover"
+                priority
+              />
             </motion.div>
           </motion.div>
         )}
